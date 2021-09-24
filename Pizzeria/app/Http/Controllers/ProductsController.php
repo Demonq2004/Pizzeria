@@ -1,9 +1,10 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Product;
 class ProductsController extends Controller
 {
     /**
@@ -13,7 +14,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('admin/products/list');
+        $products = Product::all();
+        return view('admin/products/list', ['products' => $products]);
     }
 
     /**
@@ -24,6 +26,9 @@ class ProductsController extends Controller
     public function create()
     {
         return view('admin/products/add_product');
+
+
+
     }
 
     /**
@@ -34,7 +39,13 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::create([
+            'nazwa' => $request->nazwa,
+            'cena' => $request->cena,
+            'dostawca' => $request->dostawca,
+            'data_waznosci' => $request->data_waznosci,
+            'dostepny' => true
+        ]);
     }
 
     /**
@@ -79,6 +90,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        $product->delete();
+        return redirect()->back();
     }
 }

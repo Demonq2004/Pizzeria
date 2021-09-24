@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de248775-4a57-4416-b0c2-f63a7ed8b609" name="Changes" comment="product-form and product-list">
+    <list default="true" id="de248775-4a57-4416-b0c2-f63a7ed8b609" name="Changes" comment="migrate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_24_073217_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_24_073217_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/add_product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/add_product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/list.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632475698349</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="migrate">
+      <created>1632477608138</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1632477608138</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +219,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="product-form and product-list" />
-    <option name="LAST_COMMIT_MESSAGE" value="product-form and product-list" />
+    <MESSAGE value="migrate" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrate" />
   </component>
 </project>

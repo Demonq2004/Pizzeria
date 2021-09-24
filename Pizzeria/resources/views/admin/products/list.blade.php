@@ -6,7 +6,7 @@
             <h1 class="heading">Blog Home Page Heading</h1>
         </header>
         <article class="content px-3 py-5 p-md-5">
-            <h1>Lista produktów</h1>
+            <h1 style="float: left; margin-right: 20px;">Lista produktów </h1><a style="float: left;" href="products/create" type="button" class="btn btn-success">Dodaj produkt</a>
             <table class="table">
                 <thead class="table-light">
                     <tr>
@@ -18,26 +18,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($products as $product)
                     <tr>
-                        <td>Pomidor</td>
-                        <td>2zł</td>
-                        <td>Hurtownia Katowice</td>
-                        <td>08-10-2021</td>
+                        <td>{{ $product->nazwa }}</td>
+                        <td>{{ $product->cena }}</td>
+                        <td>{{ $product->dostawca }}</td>
+                        <td>{{ $product->data_waznosci }}</td>
                         <td>
-                            <button type="button" class="btn btn-danger">Usuń</button>
-                            <button type="button" class="btn btn-info">Edytuj</button>
+                            <form action="/products/{{$product->id}}" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="btn btn-group-sm btn-danger delete-user m-0"><i class="fas fa-trash-alt"></i></button>
+                                <a href="product/{{$product->id}}/edit" type="button" class="btn btn-info">Edytuj</a>
+                            </form>
+
                         </td>
                     </tr>
-                    <tr>
-                        <td>Ser</td>
-                        <td>5zł</td>
-                        <td>Serownia "Pod Grzybem"</td>
-                        <td>12-11-2021</td>
-                        <td>
-                                <button type="button" class="btn btn-danger">Usuń</button>
-                                <button type="button" class="btn btn-info">Edytuj</button>
-                        </td>
-                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </article>

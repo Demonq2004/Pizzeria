@@ -14,6 +14,7 @@
                         <th scope="col">Cena</th>
                         <th scope="col">Dostawca</th>
                         <th scope="col">Data Ważności</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,12 +23,20 @@
                         <td>2zł</td>
                         <td>Hurtownia Katowice</td>
                         <td>08-10-2021</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">Usuń</button>
+                            <button type="button" class="btn btn-info">Edytuj</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>Ser</td>
                         <td>5zł</td>
                         <td>Serownia "Pod Grzybem"</td>
                         <td>12-11-2021</td>
+                        <td>
+                                <button type="button" class="btn btn-danger">Usuń</button>
+                                <button type="button" class="btn btn-info">Edytuj</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

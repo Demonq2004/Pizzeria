@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->text('nazwa')->default(0);
             $table->double('cena', 5, 2);
             $table->text('dostawca')->default(0);
+            $table->date('data_waznosci');
             $table->boolean('dostepny');
         });
     }

@@ -2,92 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de248775-4a57-4416-b0c2-f63a7ed8b609" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/.styleci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Console/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Exceptions/Handler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Middleware/TrimStrings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Middleware/TrustHosts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Middleware/TrustProxies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/app/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/artisan" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/bootstrap/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/bootstrap/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/broadcasting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/cors.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/filesystems.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/hashing.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/logging.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/mail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/queue.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/services.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/session.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/config/view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/database/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/database/factories/UserFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/public/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/public/web.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/lang/en/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/lang/en/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/lang/en/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/lang/en/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/sass/app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/views/welcome.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/routes/api.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/routes/channels.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/routes/console.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/routes/web.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/server.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/storage/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/storage/app/public/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/storage/framework/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/storage/framework/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/storage/framework/cache/data/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/storage/framework/sessions/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/storage/framework/testing/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/storage/framework/views/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/storage/logs/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/tests/CreatesApplication.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/tests/Feature/ExampleTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/tests/TestCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/tests/Unit/ExampleTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzeria/webpack.mix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pizzeria/public/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pizzeria/public/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/add_product.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,9 +30,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Pizzeria/.env" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -224,10 +146,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Pizzeria/resources/views/admin/products" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Pizzeria\Pizzeria\resources\views\admin\products" />
+      <recent name="C:\xampp\htdocs\Pizzeria\Pizzeria\resources\js" />
+      <recent name="C:\xampp\htdocs\Pizzeria\Pizzeria" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Pizzeria\Pizzeria\resources\views\admin\products" />
+      <recent name="C:\xampp\htdocs\Pizzeria\Pizzeria\resources\views" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -243,6 +176,7 @@
       <workItem from="1632468084103" duration="88000" />
       <workItem from="1632468175644" duration="43000" />
       <workItem from="1632468390446" duration="401000" />
+      <workItem from="1632470466523" duration="1878000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>

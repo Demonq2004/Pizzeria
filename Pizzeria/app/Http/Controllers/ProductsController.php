@@ -13,7 +13,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        echo "czesc";
+        return view('admin/products/list');
     }
 
     /**
@@ -23,7 +23,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/products/add_product');
     }
 
     /**

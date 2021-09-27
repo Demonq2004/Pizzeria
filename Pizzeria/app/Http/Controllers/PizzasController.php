@@ -26,6 +26,7 @@ class PizzasController extends Controller
      */
     public function create()
     {
+//        session()->flush();
         $products = Product::all();
         return view('admin/pizzas/add_pizza', ['products' => $products]);
     }
@@ -38,7 +39,8 @@ class PizzasController extends Controller
             'nazwa' => $skladnik->nazwa
         ];
         session()->put('pizzaSkladniki', $pizzaSkladniki);
-        return redirect()->back();
+
+        return redirect('pizzas/create');
     }
     /**
      * Store a newly created resource in storage.

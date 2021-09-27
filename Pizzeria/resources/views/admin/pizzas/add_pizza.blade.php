@@ -1,7 +1,7 @@
-
 @extends('app')
 @php
-    $pizzaSkladniki = session()->get('pizzaSkladniki');
+
+    $pizzaSkladniki = empty(session()->get('pizzaSkladniki'))?[]:session()->get('pizzaSkladniki');
 @endphp
 @section('content')
 
@@ -33,23 +33,20 @@
                                     <td>{{ $product->nazwa }}</td>
                                     <td>{{ $product->cena }}</td>
                                     <td>
-                                        @if(isset($pizzaSkladniki))
-                                            @foreach($pizzaSkladniki as $id => $skladnik)
-                                                    @if($product->nazwa == $skladnik['nazwa'])
-                                                            <a class="btn btn-danger" href="usun-skladnik/{{$product->id}}">Usun</a>
-                                                    @endif
-                                            @endforeach
-                                        @else
-                                            <a class="btn btn-primary" href="dodaj-skladnik/{{$product->id}}">Dodaj</a>
-                                        @endif
+                                            @if(array_search($product->nazwa, array_column($pizzaSkladniki, 'nazwa')))
+                                                                <a class="btn btn-danger" href="usun-skladnik/{{$product->id}}">Usun</a>
+                                            @else
+                                                <a class="btn btn-primary" href="dodaj-skladnik/{{$product->id}}">Dodaj</a>
+                                            @endif
                                     </td>
                                     @endif
                                     @endforeach
                                 </tbody>
                             </table>
+                            <strong>Składniki w sesji:</strong>
                             @if(isset($pizzaSkladniki))
                                 @foreach($pizzaSkladniki as $id => $skladnik)
-                                    {{ $skladnik['nazwa'] }}
+                                    <span>  {{ $skladnik['nazwa'] }}</span>
                                 @endforeach
                             @endif
                             <div class="form-group mt-5">

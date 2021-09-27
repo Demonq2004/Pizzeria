@@ -46,6 +46,7 @@ class ProductsController extends Controller
             'data_waznosci' => $request->data_waznosci,
             'dostepny' => true
         ]);
+        return redirect('/products');
     }
 
     /**
@@ -67,7 +68,12 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('admin/products/add_product', ['product' => $product]);
+
+
+
+
     }
 
     /**
@@ -79,7 +85,13 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->nazwa = $request->nazwa;
+        $product->cena = $request->cena;
+        $product->dostawca = $request->dostawca;
+        $product->data_waznosci = $request->data_waznosci;
+        $product->save();
+        return redirect('/products');
     }
 
     /**

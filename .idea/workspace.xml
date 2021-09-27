@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de248775-4a57-4416-b0c2-f63a7ed8b609" name="Changes" comment="migrate">
+    <list default="true" id="de248775-4a57-4416-b0c2-f63a7ed8b609" name="Changes" comment="edytowanie, usuwanie produktow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/add_product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/add_product.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/list.blade.php" afterDir="false" />
     </list>
@@ -162,6 +161,7 @@
       <workItem from="1632468084103" duration="88000" />
       <workItem from="1632468175644" duration="43000" />
       <workItem from="1632468390446" duration="401000" />
+      <workItem from="1632722241066" duration="4229000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -198,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632477608138</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="edytowanie, usuwanie produktow">
+      <created>1632480584631</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1632480584631</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +227,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="product-form and product-list" />
     <MESSAGE value="migrate" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrate" />
+    <MESSAGE value="edytowanie, usuwanie produktow" />
+    <option name="LAST_COMMIT_MESSAGE" value="edytowanie, usuwanie produktow" />
   </component>
 </project>

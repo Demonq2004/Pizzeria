@@ -29,7 +29,7 @@
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-group-sm btn-danger delete-user m-0"><i class="fas fa-trash-alt"></i></button>
-                                <a href="product/{{$product->id}}/edit" type="button" class="btn btn-info">Edytuj</a>
+                                <a href="products/{{$product->id}}/edit" type="button" class="btn btn-info">Edytuj</a>
                             </form>
 
                         </td>

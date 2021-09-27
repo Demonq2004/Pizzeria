@@ -15,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 });
 */
-
+Route::get('/pizzas/dodaj-skladnik/{id}', 'PizzasController@dodajSkladnik');
+Route::get('/pizzas/usun-skladnik/{id}', 'PizzasController@usunSkladnik');
 Route::resource('products',ProductsController::class);
+Route::resource('pizzas',PizzasController::class);
+
+

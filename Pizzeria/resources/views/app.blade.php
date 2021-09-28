@@ -36,13 +36,13 @@
 
             <ul class="navbar-nav flex-column text-sm-center text-md-left">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/"><i class="fas fa-home fa-fw mr-2"></i>Strona Głowna <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="post.html"><i class="fas fa-file-alt fa-fw mr-2"></i>Blog Post</a>
+                    <a class="nav-link" href="/pizzas"><i class="fas fa-pizza-slice fa-fw mr-2"></i>Pizzy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="page.html"><i class="fas fa-file-image fa-fw mr-2"></i>Blog Page</a>
+                    <a class="nav-link" href="/products"><i class="fas fa-utensils fa-fw mr-2"></i>Produkty</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="archive.html"><i class="fas fa-archive fa-fw mr-2"></i>Blog Archive</a>

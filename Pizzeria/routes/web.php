@@ -11,13 +11,14 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-
-Route::get('/', function () {
-});
 */
+Route::get('/', function () {
+    return view('index');
+});
+
 Route::get('/pizzas/dodaj-skladnik/{id}', 'PizzasController@dodajSkladnik');
 Route::get('/pizzas/usun-skladnik/{id}', 'PizzasController@usunSkladnik');
 Route::resource('products',ProductsController::class);
 Route::resource('pizzas',PizzasController::class);
-
+Route::get('/', 'PizzasController@list');
 

@@ -10,6 +10,7 @@
             <table class="table">
                 <thead class="table-light">
                     <tr>
+                        <th scope="col">ID</th>
                         <th scope="col">Nazwa</th>
                         <th scope="col">Cena</th>
                         <th scope="col">Dostawca</th>
@@ -20,6 +21,7 @@
                 <tbody>
                 @foreach($products as $product)
                     <tr>
+                        <th scope="col">{{$product->id}}</th>
                         <td>{{ $product->nazwa }}</td>
                         <td>{{ $product->cena }}</td>
                         <td>{{ $product->dostawca }}</td>

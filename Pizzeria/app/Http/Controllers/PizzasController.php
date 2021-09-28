@@ -7,6 +7,10 @@ use App\Pizza;
 use App\Product;
 class PizzasController extends Controller
 {
+    public function list(){
+        $pizzas = Pizza::all();
+        return view('index', ['pizzas' => $pizzas]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +46,7 @@ class PizzasController extends Controller
     }
 
 
-    public function dodajSkladnik($productId)
+    public function dodajSkladnik(Request $request, $productId)
     {
         $pizzaId = session()->get('pizza');
 //        $skladnik = Product::find($id);
@@ -57,7 +61,7 @@ class PizzasController extends Controller
         $skladniki = $pizzaSkladniki->flatMap->products;
 
         session()->put('skladniki', $skladniki);
-        return redirect()->back();
+        return redirect()->route('pizzas.create', ['pizzaNazwa' => $request->nazwa]);
     }
 
     public function usunSkladnik($id)
@@ -118,6 +122,15 @@ class PizzasController extends Controller
     {
         $pizza = Pizza::find($id);
         $pizza->nazwa = $request->nazwa;
+        $pizza->cena = $request->cena;
+        $pizza->img = $request->img;
+        if($request->file('img'))
+        {
+            $upload_path = 'public/pizza/' .$id;
+            $path = $request->file('img')->store($upload_path);
+            $img_filename = str_replace($upload_path.'/','',$path);
+            $pizza->img = $img_filename;
+        }
         $pizza->save();
         session()->flush();
         return redirect('/pizzas');
@@ -131,6 +144,9 @@ class PizzasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pizza = Pizza::find($id);
+
+        $pizza->delete();
+        return redirect()->back();
     }
 }

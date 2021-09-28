@@ -12,16 +12,16 @@
                     </header>
                     <article class="content px-3 py-5 p-md-5">
                         <h1>Fromularz dodawania pizzy</h1>
-                        <form action="/pizzas/{{ $pizzaId }}" method="POST" enctype="multipart/form-data">
+                        <form action="/admin/pizzas/{{ $pizzaId }}" method="POST" enctype="multipart/form-data">
                         @csrf <!-- {{ csrf_field() }} -->
                             {{ method_field('PATCH') }}
                             <div class="form-group">
                                 <label for="exampleInputPizza">Nazwa Pizzy</label>
-                                <input type="text" class="form-control" name="nazwa" id="exampleInputPizza" placeholder="Pizza" required>
+                                <input type="text" class="form-control" name="nazwa" id="exampleInputPizza" placeholder="Pizza" required {{ old('nazwa') }}>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPrice">Cena Pizzy</label>
-                                <input type="number" class="form-control" name="cena" id="exampleInputPrice" placeholder="Cena" required>
+                                <input type="number" class="form-control" name="cena" id="exampleInputPrice" placeholder="Cena" required {{ old('cena') }}>
                             </div>
                             <table class="table">
                                 <thead class="table-light">

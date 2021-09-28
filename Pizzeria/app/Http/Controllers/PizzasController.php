@@ -133,7 +133,7 @@ class PizzasController extends Controller
         }
         $pizza->save();
         session()->flush();
-        return redirect('/pizzas');
+        return redirect('/admin/pizzas');
     }
 
     /**

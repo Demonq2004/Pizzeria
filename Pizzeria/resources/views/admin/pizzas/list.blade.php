@@ -6,7 +6,7 @@
             <h1 class="heading">Blog Home Page Heading</h1>
         </header>
         <article class="content px-3 py-5 p-md-5">
-            <div style="width: 100%; height: 70px" ><h1 style="float: left; margin-right: 20px;">Lista pizzy </h1><a style="float: left;" href="create" type="button" class="btn btn-success">Dodaj pizza</a></div>
+            <div style="width: 100%; height: 70px" ><h1 style="float: left; margin-right: 20px;">Lista pizzy </h1><a style="float: left;" href="pizzas/create" type="button" class="btn btn-success">Dodaj pizza</a></div>
                 <div class="row">
                     @foreach($pizzas as $pizza)
                     <div class="col-xl-2 col-lg-5 col-sm-5 col-8 mx-3 my-3 px-0" style="background-color: #f8f8f8">

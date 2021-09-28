@@ -26,18 +26,45 @@ class PizzasController extends Controller
      */
     public function create()
     {
-//        session()->flush();
         $products = Product::all();
+        if(!session()->get('pizza'))
+        {
+            $pizza = Pizza::create([
+                'nazwa' => null,
+                'cena' => null,
+                'skladniki' => null,
+                'img' => null
+            ]);
+            session()->put('pizza', $pizza->id);
+        }
+
         return view('admin/pizzas/add_pizza', ['products' => $products]);
     }
-    public function dodajSkladnik($id)
+
+
+    public function dodajSkladnik($productId)
+    {
+        $pizzaId = session()->get('pizza');
+//        $skladnik = Product::find($id);
+//        $pizzaSkladniki[$id] = [
+//            'id' => $skladnik->id,
+//            'nazwa' => $skladnik->nazwa
+//        ];
+//        session()->put('pizzaSkladniki', $pizzaSkladniki);
+        Pizza::find($pizzaId)->products()->attach($productId);
+
+        $pizzaSkladniki = Pizza::with('products')->where('pizzas.id', '=', $pizzaId)->get();
+        $skladniki = $pizzaSkladniki->flatMap->products;
+
+        session()->put('skladniki', $skladniki);
+        return redirect()->back();
+    }
+
+    public function usunSkladnik($id)
     {
         $pizzaSkladniki = session()->get('pizzaSkladniki');
-        $skladnik = Product::find($id);
-        $pizzaSkladniki[$id] = [
-            'id' => $skladnik->id,
-            'nazwa' => $skladnik->nazwa
-        ];
+        unset($pizzaSkladniki[$id], $pizzaSkladniki);
+
         session()->put('pizzaSkladniki', $pizzaSkladniki);
 
         return redirect('pizzas/create');
@@ -89,7 +116,11 @@ class PizzasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pizza = Pizza::find($id);
+        $pizza->nazwa = $request->nazwa;
+        $pizza->save();
+        session()->flush();
+        return redirect('/pizzas');
     }
 
     /**

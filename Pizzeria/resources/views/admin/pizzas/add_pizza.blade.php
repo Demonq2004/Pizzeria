@@ -1,7 +1,7 @@
 @extends('app')
 @php
-
-    $pizzaSkladniki = empty(session()->get('pizzaSkladniki'))?[]:session()->get('pizzaSkladniki');
+    $pizzaId = session()->get('pizza');
+    $skladniki = session()->get('skladniki');
 @endphp
 @section('content')
 
@@ -12,8 +12,9 @@
                     </header>
                     <article class="content px-3 py-5 p-md-5">
                         <h1>Fromularz dodawania pizzy</h1>
-                        <form action="/pizzas" method="POST">
+                        <form action="/pizzas/{{ $pizzaId }}" method="POST">
                         @csrf <!-- {{ csrf_field() }} -->
+                            {{ method_field('PATCH') }}
                             <div class="form-group">
                                 <label for="exampleInputPizza">Nazwa Pizzy</label>
                                 <input type="text" class="form-control" name="nazwa" id="exampleInputPizza" placeholder="Pizza" required>
@@ -33,25 +34,31 @@
                                     <td>{{ $product->nazwa }}</td>
                                     <td>{{ $product->cena }}</td>
                                     <td>
-                                            @if(array_search($product->nazwa, array_column($pizzaSkladniki, 'nazwa')))
-                                                                <a class="btn btn-danger" href="usun-skladnik/{{$product->id}}">Usun</a>
-                                            @else
-                                                <a class="btn btn-primary" href="dodaj-skladnik/{{$product->id}}">Dodaj</a>
-                                            @endif
+{{--                                        @if(isset($skladniki))--}}
+{{--                                            @if(array_search($product->nazwa, array_column($skladniki, 'nazwa')))--}}
+{{--                                                                <a class="btn btn-danger" href="usun-skladnik/{{$product->id}}">Usun</a>--}}
+{{--                                            @else--}}
+{{--                                                <a class="btn btn-primary" href="dodaj-skladnik/{{$product->id}}">Dodaj</a>--}}
+{{--                                            @endif--}}
+{{--                                        @else--}}
+{{--                                        @endif--}}
+                                        <a class="btn btn-primary" href="dodaj-skladnik/{{$product->id}}">Dodaj</a>
                                     </td>
-                                    @endif
+                                @endif
                                     @endforeach
                                 </tbody>
                             </table>
                             <strong>Składniki w sesji:</strong>
-                            @if(isset($pizzaSkladniki))
-                                @foreach($pizzaSkladniki as $id => $skladnik)
-                                    <span>  {{ $skladnik['nazwa'] }}</span>
+                            @if(isset($skladniki))
+                                @foreach($skladniki as $skladnik)
+                                    <span>  {{ $skladnik->nazwa }}</span>
                                 @endforeach
+                            @else
+                                niema
                             @endif
                             <div class="form-group mt-5">
                                 <label for="exampleInputProductImg">Zdjęcie Pizzy</label><br>
-                                <input type="file" name="img" id="exampleInputProductsImg" required>
+                                <input type="file" name="img" id="exampleInputProductsImg" >
                             </div>
                             <button type="submit" class="btn btn-primary">Dodaj Pizze</button>
                         </form>

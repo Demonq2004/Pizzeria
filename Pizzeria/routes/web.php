@@ -16,9 +16,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/pizzas/dodaj-skladnik/{id}', 'PizzasController@dodajSkladnik');
-Route::get('/pizzas/usun-skladnik/{id}', 'PizzasController@usunSkladnik');
-Route::resource('products',ProductsController::class);
-Route::resource('pizzas',PizzasController::class);
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/pizzas/dodaj-skladnik/{id}', 'PizzasController@dodajSkladnik');
+    Route::get('/pizzas/usun-skladnik/{id}', 'PizzasController@usunSkladnik');
+    Route::resource('products', ProductsController::class);
+    Route::resource('pizzas', PizzasController::class);
+});
 Route::get('/', 'PizzasController@list');
 

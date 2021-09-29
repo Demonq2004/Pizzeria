@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('index');
-});
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/pizzas/dodaj-skladnik/{id}', 'PizzasController@dodajSkladnik');
@@ -23,5 +20,5 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('pizzas', PizzasController::class);
 });
 Route::get('/', 'PizzasController@list');
-Route::get('/', 'ProductsController@productsList');
+//Route::get('/', 'ProductsController@productsList');
 

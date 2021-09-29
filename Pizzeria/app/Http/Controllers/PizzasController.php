@@ -8,8 +8,17 @@ use App\Product;
 class PizzasController extends Controller
 {
     public function list(){
-        $pizzas = Pizza::all();
-        return view('index', ['pizzas' => $pizzas]);
+        $pizzas = Pizza::with('products')->get();
+
+        $products = $pizzas->flatMap->products;
+
+        $dostawcy = [];
+        foreach ($products as $product)
+        {
+             $dostawcy[] = $product->dostawca;
+        }
+
+        return view('index', ['pizzas' => $pizzas, 'dostawcy' => $dostawcy]);
     }
     /**
      * Display a listing of the resource.

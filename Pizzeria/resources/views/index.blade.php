@@ -103,18 +103,19 @@
             <div class="row" id="dostawcy" style="width: 80%; margin-left: 10%; margin-top: 30px">
                 <h1 class="text-center" style="width: 100%; height: 70px" >Nasi Dostawcy</h1>
                 <div class="col-xl-6 col-lg-6 col-sm-6 col-12 my-3 px-0" style="background-color: #f8f8f8">
+                    @foreach($dostawcy as $dostawca)
+                        {{ $dostawca }}
+                    @endforeach
+{{--                    <div class="px-3">--}}
+{{--                        <p style="font-size: 120%" class="text-uppercase pt-3"><b>{{$pizza->nazwa}}</b></p>--}}
+{{--                        <small>{{$pizza->skladniki}}</small>--}}
 
-                    <div class="px-3">
-                        <p style="font-size: 120%" class="text-uppercase pt-3"><b>{{$pizza->nazwa}}</b></p>
-                        <small>{{$pizza->skladniki}}</small>
-
-                    </div>
-                    <div class="col-12 px-0" style="height: 2px; background-color: white"></div>
-                    <div class="px-4 pt-3">
-                        <p style="font-weight: bold; float: left">{{$pizza->cena}} ZŁ</p>
-                        <button style="margin-left:10%;font-size: 80%; background-color: #82B300; border: 0; border-radius: 5px; padding: 3px; color: white; float: left">Dodaj do koszyka</button>
-                    </div>
-
+{{--                    </div>--}}
+{{--                    <div class="col-12 px-0" style="height: 2px; background-color: white"></div>--}}
+{{--                    <div class="px-4 pt-3">--}}
+{{--                        <p style="font-weight: bold; float: left">{{$pizza->cena}} ZŁ</p>--}}
+{{--                        <button style="margin-left:10%;font-size: 80%; background-color: #82B300; border: 0; border-radius: 5px; padding: 3px; color: white; float: left">Dodaj do koszyka</button>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </article>

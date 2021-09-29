@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de248775-4a57-4416-b0c2-f63a7ed8b609" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_09_2021_10_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_09_2021_10_46__Changes_.xml" afterDir="false" />
+    <list default="true" id="de248775-4a57-4416-b0c2-f63a7ed8b609" name="Changes" comment="Pizza/Strona Głowna">
+      <change afterPath="$PROJECT_DIR$/Pizzeria/public/css/home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/PizzasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/PizzasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/pizzas/add_pizza.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/pizzas/add_pizza.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/pizzas/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/pizzas/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +18,27 @@
     <pharConfigPath>$PROJECT_DIR$/Pizzeria/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="feature/Products" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="feature/Produkty" />
@@ -148,6 +165,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -167,6 +185,7 @@
       <workItem from="1632468175644" duration="43000" />
       <workItem from="1632468390446" duration="401000" />
       <workItem from="1632722241066" duration="16669000" />
+      <workItem from="1632895304611" duration="9263000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -217,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632727446538</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Pizza/Strona Głowna">
+      <created>1632833759792</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1632833759792</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +266,7 @@
     <MESSAGE value="product-form and product-list" />
     <MESSAGE value="edytowanie, usuwanie produktow" />
     <MESSAGE value="migrate" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrate" />
+    <MESSAGE value="Pizza/Strona Głowna" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pizza/Strona Głowna" />
   </component>
 </project>

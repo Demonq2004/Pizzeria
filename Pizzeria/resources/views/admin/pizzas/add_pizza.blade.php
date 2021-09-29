@@ -44,6 +44,7 @@
 {{--                                        @else--}}
 {{--                                        @endif--}}
                                         <a class="btn btn-primary" href="dodaj-skladnik/{{$product->id}}">Dodaj</a>
+                                        <a class="btn btn-danger" href="usun-skladnik/{{$product->id}}">Usuń</a>
                                     </td>
                                 @endif
                                     @endforeach

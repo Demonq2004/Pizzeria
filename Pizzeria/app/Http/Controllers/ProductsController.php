@@ -51,7 +51,7 @@ class ProductsController extends Controller
             'data_waznosci' => $request->data_waznosci,
             'dostepny' => true
         ]);
-        return redirect('admin/products');
+        return redirect('products');
     }
 
     /**

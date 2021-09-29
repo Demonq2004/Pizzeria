@@ -12,8 +12,9 @@
                 <p style="line-height: 50px; font-size: 150%; font-weight: 200; letter-spacing: 2px">POSIADAMY X RODZAJÓW PIZZY</p>
             </div>
             <div style="margin-left: 30%; margin-top: 50px">
-                <button style="border: 1px solid white; background-color: transparent; color: white; width: 350px; height: 50px;font-size: 150%;letter-spacing: 2px">ZOBACZ NASZE MENU</button>
-                <button style="margin-left: 5%;border: 0; ;background-color: red; color: white; width: 350px; height: 50px;font-size: 150%;letter-spacing: 2px">SKONTAKTUJ SIĘ Z NAMI</button>
+                <button style="border: 1px solid white; background-color: transparent; color: white; width: 350px; height: 50px;font-size: 150%;letter-spacing: 2px" onclick="window.location=('#menu')">ZOBACZ NASZE MENU</button>
+                <button style="margin-left: 5%;border: 0; ;background-color: red; color: white; width: 350px; height: 50px;font-size: 150%;letter-spacing: 2px" onclick="window.location=('#kontakt')">SKONTAKTUJ SIĘ Z NAMI</button>
+
             </div>
         </div>
         <article class="content px-3 py-5 p-md-5">
@@ -24,9 +25,6 @@
                         <img class="col-12" height="200" src="/storage/pizza/{{$pizza->id}}/{{$pizza->img}}">
                         <div class="px-3">
                             <p style="font-size: 120%" class="text-uppercase pt-3"><b><a style="color: black; text-decoration: none" href="/pizzas/{{$pizza->id}}" >{{$pizza->nazwa}}</a></b></p>
-                            @foreach($products as $product)
-                                {{$product->nazwa}}
-                            @endforeach
 
                         </div>
                         <div class="col-12 px-0" style="height: 2px; background-color: white"></div>
@@ -71,7 +69,7 @@
                     @endforeach
 
             </div>
-            <div class="" style="width: 80%; margin-left: 10%; margin-top: 30px">
+            <div class="" style="width: 80%; margin-left: 10%; margin-top: 30px" id="kontakt">
 
                         <form action="mail.php" method="post">
                             <div class="card rounded-0">

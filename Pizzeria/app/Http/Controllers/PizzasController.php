@@ -10,7 +10,8 @@ class PizzasController extends Controller
     public function list(){
         $pizzas = Pizza::with('products')->get();
         $products = Product::all();
-        return view('index', ['pizzas' => $pizzas, 'products' => $products]);
+        //$pizza_products = Product::join('Pizza_products','products.id','=','pizza_products.product_id')->where('pizza_products.pizza_id',$pizzas->id)->get();
+        return view('index', ['pizzas' => $pizzas, 'products' => $products/*, 'pizza_products' => $pizza_products*/]);
     }
     /**
      * Display a listing of the resource.
@@ -21,8 +22,8 @@ class PizzasController extends Controller
     {
 
         $pizzas = Pizza::all();
-        $products = Product::all();
-        return view('admin/pizzas/list', ['pizzas' => $pizzas, 'products', $products]);
+
+        return view('admin/pizzas/list', ['pizzas' => $pizzas]);
     }
 
     /**
@@ -88,7 +89,7 @@ class PizzasController extends Controller
             'skladniki' => $request->skladniki,
             'img' => $request->img
         ]);
-        return redirect('/pizzas');
+        return redirect('/admin/pizzas');
     }
 
     /**

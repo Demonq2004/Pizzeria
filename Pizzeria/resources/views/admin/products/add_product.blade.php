@@ -3,10 +3,8 @@
 @section('content')
 
         @if(isset($product))
-            <div class="main-wrapper">
-                <header class="page-title theme-bg-light text-center gradient py-5">
-                    <h1 class="heading">Blog Home Page Heading</h1>
-                </header>
+            <div class="main-page" style="margin-top: 100px">
+
             <article class="content px-3 py-5 p-md-5">
                 <h1>Fromularz edytowania produktów</h1>
                 <form action="/products/{{ $product->id }} " method="POST">
@@ -33,10 +31,8 @@
                 </form>
             </article>
         @else
-                    <div class="main-wrapper">
-                        <header class="page-title theme-bg-light text-center gradient py-5">
-                            <h1 class="heading">Blog Home Page Heading</h1>
-                        </header>
+                    <div class="main-page" style="margin-top: 100px">
+
             <article class="content px-3 py-5 p-md-5">
                 <h1>Fromularz dodawania produktów</h1>
                 <form action="/products" method="POST">

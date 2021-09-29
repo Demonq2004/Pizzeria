@@ -9,16 +9,8 @@ class PizzasController extends Controller
 {
     public function list(){
         $pizzas = Pizza::with('products')->get();
-
-        $products = $pizzas->flatMap->products;
-
-        $dostawcy = [];
-        foreach ($products as $product)
-        {
-             $dostawcy[] = $product->dostawca;
-        }
-
-        return view('index', ['pizzas' => $pizzas, 'dostawcy' => $dostawcy]);
+        $products = Product::all();
+        return view('index', ['pizzas' => $pizzas, 'products' => $products]);
     }
     /**
      * Display a listing of the resource.
@@ -29,7 +21,8 @@ class PizzasController extends Controller
     {
 
         $pizzas = Pizza::all();
-        return view('admin/pizzas/list', ['pizzas' => $pizzas]);
+        $products = Product::all();
+        return view('admin/pizzas/list', ['pizzas' => $pizzas, 'products', $products]);
     }
 
     /**
@@ -106,7 +99,9 @@ class PizzasController extends Controller
      */
     public function show($id)
     {
-        //
+        $pizzas = Pizza::where('id',$id)->get();
+        $products = Product::join('Pizza_products','products.id','=','pizza_products.product_id')->where('pizza_products.pizza_id',$id)->get();
+        return view('pizzas/single', ['pizzas' => $pizzas, 'products' => $products]);
     }
 
     /**

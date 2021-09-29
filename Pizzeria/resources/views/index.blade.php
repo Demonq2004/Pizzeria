@@ -1,51 +1,6 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <title>Blog Site Template</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog Site Template">
+@extends('app')
 
-    <!-- FontAwesome CSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Theme CSS -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-</head>
-<body>
-    <div class="menu fixed-top" style="background-color: black;" style="z-index: 10">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <img src="/storage/home/menulogo.png" height="80">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#onas">O nas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#dostawcy">Nasi Dostawcy</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#opinie">Opinie</a>
-                    </li>
-
-                <li class="my-2 my-lg-0 nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+@section('content')
     <div class="main-page">
         <div class="bg-image" style="margin-top: 93px; height: 750px; background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/storage/home/baner.jpg); background-repeat: no-repeat; background-size: 100% 100%">
             <div class="text-center" style="line-height: 144px; padding-top: 100px">
@@ -68,8 +23,10 @@
                     <div class="col-xl-3 col-lg-4 col-sm-6 col-12 my-3 px-0" style="background-color: #f8f8f8">
                         <img class="col-12" height="200" src="/storage/pizza/{{$pizza->id}}/{{$pizza->img}}">
                         <div class="px-3">
-                            <p style="font-size: 120%" class="text-uppercase pt-3"><b>{{$pizza->nazwa}}</b></p>
-                            <small>{{$pizza->skladniki}}</small>
+                            <p style="font-size: 120%" class="text-uppercase pt-3"><b><a style="color: black; text-decoration: none" href="/pizzas/{{$pizza->id}}" >{{$pizza->nazwa}}</a></b></p>
+                            @foreach($products as $product)
+                                {{$product->nazwa}}
+                            @endforeach
 
                         </div>
                         <div class="col-12 px-0" style="height: 2px; background-color: white"></div>
@@ -98,53 +55,74 @@
         <div style="width: 100%; height: 300px;background-attachment: fixed; background-size: 100% 100%; background-repeat: no-repeat; background-image: url(/storage/home/przerywnik.jpg)">
 
         </div>
-        <article>
+        <article class="content px-3 py-5 p-md-5">
 
             <div class="row" id="dostawcy" style="width: 80%; margin-left: 10%; margin-top: 30px">
                 <h1 class="text-center" style="width: 100%; height: 70px" >Nasi Dostawcy</h1>
-                <div class="col-xl-6 col-lg-6 col-sm-6 col-12 my-3 px-0" style="background-color: #f8f8f8">
-                    @foreach($dostawcy as $dostawca)
-                        {{ $dostawca }}
-                    @endforeach
-{{--                    <div class="px-3">--}}
-{{--                        <p style="font-size: 120%" class="text-uppercase pt-3"><b>{{$pizza->nazwa}}</b></p>--}}
-{{--                        <small>{{$pizza->skladniki}}</small>--}}
 
-{{--                    </div>--}}
-{{--                    <div class="col-12 px-0" style="height: 2px; background-color: white"></div>--}}
-{{--                    <div class="px-4 pt-3">--}}
-{{--                        <p style="font-weight: bold; float: left">{{$pizza->cena}} ZŁ</p>--}}
-{{--                        <button style="margin-left:10%;font-size: 80%; background-color: #82B300; border: 0; border-radius: 5px; padding: 3px; color: white; float: left">Dodaj do koszyka</button>--}}
-{{--                    </div>--}}
+                    @foreach($products as $product)
+                    <div class="col-xl-5 col-lg-5 col-sm-5 col-12 my-3 px-0 mx-3 text-center" style="background-color: #f8f8f8">
+                        <div class="px-3">
+                            <p style="font-size: 120%" class=" pt-3">Nazwa produktu: <b>{{$product->nazwa}}</b></p>
+                            <p>Dostawca: <b>{{$product->dostawca}}</b></p>
+
+                        </div>
+                    </div>
+                    @endforeach
+
+            </div>
+            <div class="" style="width: 80%; margin-left: 10%; margin-top: 30px">
+
+                        <form action="mail.php" method="post">
+                            <div class="card rounded-0">
+                                <div class="card-header p-0">
+                                    <div class="bg-dark text-white text-center py-2">
+                                        <h3 style="color: white"><i class="fa fa-envelope"></i> Kontakt</h3>
+                                        <p class="m-0">Napisz do nas!</p>
+                                    </div>
+                                </div>
+                                <div class="card-body p-3">
+
+                                    <!--Body-->
+                                    <div class="form-group">
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="fa fa-user text-dark"></i></div>
+                                            </div>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Imię i nazwisko" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="fa fa-envelope text-dark"></i></div>
+                                            </div>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="fa fa-comment text-dark"></i></div>
+                                            </div>
+                                            <textarea class="form-control" placeholder="Wiadomość" required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <input type="submit" value="Wyślij" class="btn btn-dark btn-block rounded-0 py-2">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                        <!--Form with header-->
+
+
+                    </div>
                 </div>
             </div>
         </article>
     </div>
-
-    <footer class="w-100  bg-dark" style="height: 370px">
-        <div style="width: 40%; height: 300px; float: left" class="p-3">
-            <img height="250" src="/storage/home/footerlogo.png" style="margin-left: 15%">
-        </div>
-        <div style="width: 30%; height: 300px; float: left; color: white; font-size: 130%; line-height: 50px" class="p-3">
-            <h3 style="color: white">Skontaktuj się z nami</h3>
-            <p>Pizza House</p>
-            <p>pizza.house@contact.com</p>
-            <p>853 912 526</p>
-        </div>
-        <div style="width: 30%; height: 300px; float: left; color: white; font-size: 130%; line-height: 50px" class="p-3">
-            <h3 style="color: white">Lokalizacja</h3>
-            <p>Katowice 4/1</p>
-            <p>40-038 Katowice</p>
-            <p>Polska</p>
-        </div>
-        <div style="width: 100%; height: 2px; background-color: white; float: left"></div>
-        <div class="p-3" style="font-size: 130%">
-            <p style="color: white;">&copy; 2021 Pizza House - Dawid Grzegorzek</p>
-        </div>
-    </footer>
-    <!-- Bootstrap Javascript -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
-</html>
+@endsection()

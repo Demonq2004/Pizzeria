@@ -20,5 +20,5 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('pizzas', PizzasController::class);
 });
 Route::get('/', 'PizzasController@list');
-//Route::get('/', 'ProductsController@productsList');
+Route::get('/pizzas/{id}', 'PizzasController@show');
 

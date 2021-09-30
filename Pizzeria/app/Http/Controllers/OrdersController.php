@@ -24,7 +24,7 @@ class OrdersController extends Controller
     public function create(Request $request)
     {
         $pizza = Pizza::with('products')->where('id',$request->id)->get();
-        return view('orders/cart', ['pizza' => $pizza[0]]);
+        return view('orders/order', ['pizza' => $pizza[0]]);
     }
 
     /**
@@ -81,5 +81,32 @@ class OrdersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addToCart(Request $request)
+    {
+        $cart = session()->get('cart');
+
+        $id = $request->pizza_id;
+        $pizza = Pizza::find($id);
+        if(!$cart)
+        {
+            $cart = [
+                $id => [
+                    'id' => $request->pizza_id,
+                    'pizza_nazwa' => $pizza->nazwa,
+                    'rozmiar' => $request->rozmiar,
+                    'sos' => $request->sos,
+                    'ilosc' => $request->ilosc
+                ]
+            ];
+            session()->put('cart', $cart);
+        }
+        return redirect('/')->with('success', $pizza->nazwa.' dodana do koszyka');
+
+    }
+    public function showCart(){
+
+        return view('orders/cart');
     }
 }

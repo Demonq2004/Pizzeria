@@ -42,7 +42,7 @@
                     </li>
 
                     <li class="my-2 my-lg-0 nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="/orders/show-cart"><i class="fas fa-shopping-cart"></i> Koszyk</a>
                     </li>
                 </ul>
             </div>

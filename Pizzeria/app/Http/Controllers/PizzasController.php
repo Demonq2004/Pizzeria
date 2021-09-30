@@ -8,6 +8,7 @@ use App\Product;
 class PizzasController extends Controller
 {
     public function list(){
+        $cart = session()->get('cart');
         $pizzas = Pizza::with('products')->get();
         $products = Product::all();
         $skladniki = $pizzas->flatMap->products;

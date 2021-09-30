@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+
     <div class="main-page">
         <div class="bg-image" style="margin-top: 93px; height: 750px; background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/storage/home/baner.jpg); background-repeat: no-repeat; background-size: 100% 100%">
             <div class="text-center" style="line-height: 144px; padding-top: 100px">
@@ -9,7 +10,7 @@
 
             </div>
             <div style="width: 450px; height: 50px; background-color: white; text-align: center; margin-left: 38%; margin-top: 50px">
-                <p style="line-height: 50px; font-size: 150%; font-weight: 200; letter-spacing: 2px">POSIADAMY X RODZAJÓW PIZZY</p>
+                <p style="line-height: 50px; font-size: 150%; font-weight: 200; letter-spacing: 2px">POSIADAMY RODZAJÓW PIZZY</p>
             </div>
             <div style="margin-left: 30%; margin-top: 50px">
                 <button style="border: 1px solid white; background-color: transparent; color: white; width: 350px; height: 50px;font-size: 150%;letter-spacing: 2px" onclick="window.location=('#menu')">ZOBACZ NASZE MENU</button>
@@ -18,6 +19,9 @@
             </div>
         </div>
         <article class="content px-3 py-5 p-md-5">
+            <div class="alert-success">
+                @include('alerts')
+            </div>
             <h1 class="text-center" style="width: 100%; height: 70px" >Nasze Menu</h1>
             <div class="row" id="menu" style="width: 80%; margin-left: 10%">
                 @foreach($pizzas as $pizza)

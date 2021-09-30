@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de248775-4a57-4416-b0c2-f63a7ed8b609" name="Changes" comment="Strona głowna">
+    <list default="true" id="de248775-4a57-4416-b0c2-f63a7ed8b609" name="Changes" comment="Koszyk">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/PizzasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/PizzasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_24_113932_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_24_113932_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/pizzas/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/pizzas/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/add_product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/products/add_product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/pizzas/single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/pizzas/single.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/order.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/storage/app/public/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +189,10 @@
       <workItem from="1632722241066" duration="16669000" />
       <workItem from="1632895304611" duration="13935000" />
       <workItem from="1632914214551" duration="5267000" />
-      <workItem from="1632984642753" duration="10588000" />
+      <workItem from="1632984642753" duration="16911000" />
+      <workItem from="1633002970342" duration="162000" />
+      <workItem from="1633005343571" duration="1250000" />
+      <workItem from="1633069972115" duration="11195000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -270,7 +271,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632919523080</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Karta">
+      <created>1632996534211</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1632996534211</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Koszyk">
+      <created>1633005889080</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1633005889080</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +310,8 @@
     <MESSAGE value="migrate" />
     <MESSAGE value="Pizza/Strona Głowna" />
     <MESSAGE value="Strona głowna" />
-    <option name="LAST_COMMIT_MESSAGE" value="Strona głowna" />
+    <MESSAGE value="Karta" />
+    <MESSAGE value="Koszyk" />
+    <option name="LAST_COMMIT_MESSAGE" value="Koszyk" />
   </component>
 </project>

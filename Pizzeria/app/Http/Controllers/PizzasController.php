@@ -8,11 +8,13 @@ use App\Product;
 class PizzasController extends Controller
 {
     public function list(){
+        $cart = session()->get('cart');
         $pizzas = Pizza::with('products')->get();
         $products = Product::all();
         $skladniki = $pizzas->flatMap->products;
         //$pizza_products = Product::join('Pizza_products','products.id','=','pizza_products.product_id')->where('pizza_products.pizza_id',$pizzas->id)->get();
-        return view('index', ['pizzas' => $pizzas,'products' => $products , 'skladniki' => $skladniki]);
+        $ilosc_pizzy = Pizza::count();
+        return view('index', ['pizzas' => $pizzas,'products' => $products , 'skladniki' => $skladniki, 'ilosc_pizzy', compact('ilosc_pizzy')]);
     }
     /**
      * Display a listing of the resource.
@@ -136,7 +138,7 @@ class PizzasController extends Controller
         if($request->file('img'))
         {
             $upload_path = 'public/pizza/' .$id;
-            $path = $request->file('img')->store($upload_path);
+            $path = $request->file('img')->storeAs($upload_path,'pizza_img.jpg');
             $img_filename = str_replace($upload_path.'/','',$path);
             $pizza->img = $img_filename;
         }

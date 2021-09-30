@@ -24,7 +24,7 @@ class OrdersController extends Controller
     public function create(Request $request)
     {
         $pizza = Pizza::with('products')->where('id',$request->id)->get();
-        return view('orders/cart', ['pizza' => $pizza[0]]);
+        return view('orders/order', ['pizza' => $pizza[0]]);
     }
 
     /**
@@ -81,5 +81,51 @@ class OrdersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addToCart(Request $request)
+    {
+        $cart = session()->get('cart');
+
+        $id = $request->pizza_id;
+        $pizza = Pizza::find($id);
+        if(!$cart)
+        {
+            if($request->rozmiar == '45'){
+                $cenar = $request->cena*1.3;
+                $cenaogl = $cenar * $request->ilosc;
+            }elseif ($request->rozmiar == '50'){
+                $cenar = $request->cena*1.5;
+                $cenaogl = $cenar * $request->ilosc;
+            }elseif ($request->rozmiar == '60'){
+                $cenar = $request->cena*1.8;
+                $cenaogl = $cenar * $request->ilosc;
+            }else{
+                $cenar = $request->cena;
+                $cenaogl = $cenar * $request->ilosc;
+            }
+
+            $cart = [
+                $id => [
+                    'id' => $request->pizza_id,
+                    'pizza_nazwa' => $pizza->nazwa,
+                    'rozmiar' => $request->rozmiar,
+                    'sos' => $request->sos,
+                    'ilosc' => $request->ilosc,
+                    'cena_szt' => $cenar,
+                    'cena_ogl' => $cenaogl
+
+                ]
+            ];
+            session()->put('cart', $cart);
+        }
+        return redirect('/')->with('success', $pizza->nazwa.' dodana do koszyka');
+
+    }
+    public function showCart(){
+        //session()->flush();
+        $carts = session()->get('cart');
+
+        return view('orders/cart');
     }
 }

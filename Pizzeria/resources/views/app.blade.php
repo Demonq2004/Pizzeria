@@ -29,20 +29,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
+                        <a class="nav-link" href="/">Strona Główna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#onas">O nas</a>
+                        <a class="nav-link" href="/#menu">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#dostawcy">Nasi Dostawcy</a>
+                        <a class="nav-link" href="/#onas">O nas</a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#opinie">Opinie</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#dostawcy">Nasi Dostawcy</a>
                     </li>
-
                     <li class="my-2 my-lg-0 nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="/show-cart"><i class="fas fa-shopping-cart"></i> Koszyk</a>
                     </li>
                 </ul>
             </div>

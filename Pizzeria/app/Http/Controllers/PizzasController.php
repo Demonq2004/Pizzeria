@@ -10,8 +10,9 @@ class PizzasController extends Controller
     public function list(){
         $pizzas = Pizza::with('products')->get();
         $products = Product::all();
+        $skladniki = $pizzas->flatMap->products;
         //$pizza_products = Product::join('Pizza_products','products.id','=','pizza_products.product_id')->where('pizza_products.pizza_id',$pizzas->id)->get();
-        return view('index', ['pizzas' => $pizzas, 'products' => $products/*, 'pizza_products' => $pizza_products*/]);
+        return view('index', ['pizzas' => $pizzas,'products' => $products , 'skladniki' => $skladniki]);
     }
     /**
      * Display a listing of the resource.
@@ -21,9 +22,9 @@ class PizzasController extends Controller
     public function index()
     {
 
-        $pizzas = Pizza::all();
-
-        return view('admin/pizzas/list', ['pizzas' => $pizzas]);
+        $pizzas = Pizza::with('products')->get();
+        $skladniki = $pizzas->flatMap->products;
+        return view('admin/pizzas/list', ['pizzas' => $pizzas, 'skladniki' => $skladniki]);
     }
 
     /**
@@ -33,6 +34,7 @@ class PizzasController extends Controller
      */
     public function create()
     {
+        //session()->flush();
         $products = Product::all();
         if(!session()->get('pizza'))
         {
@@ -67,14 +69,17 @@ class PizzasController extends Controller
         return redirect()->route('pizzas.create', ['pizzaNazwa' => $request->nazwa]);
     }
 
-    public function usunSkladnik($id)
+    public function usunSkladnik($productId)
     {
-        $pizzaSkladniki = session()->get('pizzaSkladniki');
-        unset($pizzaSkladniki[$id], $pizzaSkladniki);
+        $pizzaId = session()->get('pizza');
+        $pizzaSkladniki = session()->get('skladniki');
+        Pizza::find($pizzaId)->products()->detach($productId);
+//        unset($pizzaSkladniki[$productId]);
+        $pizzaSkladniki = Pizza::with('products')->where('pizzas.id', '=', $pizzaId)->get();
+        $skladniki = $pizzaSkladniki->flatMap->products;
+        session()->put('skladniki', $skladniki);
 
-        session()->put('pizzaSkladniki', $pizzaSkladniki);
-
-        return redirect('pizzas/create');
+        return redirect('/admin/pizzas/create');
     }
     /**
      * Store a newly created resource in storage.
@@ -100,9 +105,8 @@ class PizzasController extends Controller
      */
     public function show($id)
     {
-        $pizzas = Pizza::where('id',$id)->get();
-        $products = Product::join('Pizza_products','products.id','=','pizza_products.product_id')->where('pizza_products.pizza_id',$id)->get();
-        return view('pizzas/single', ['pizzas' => $pizzas, 'products' => $products]);
+        $pizza = Pizza::with('products')->where('id',$id)->get();
+        return view('pizzas/single', ['pizza' => $pizza[0]]);
     }
 
     /**

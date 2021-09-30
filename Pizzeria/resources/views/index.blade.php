@@ -30,7 +30,12 @@
                         <div class="col-12 px-0" style="height: 2px; background-color: white"></div>
                         <div class="px-4 pt-3">
                             <p style="font-weight: bold; float: left">{{$pizza->cena}} ZŁ</p>
-                            <button style="margin-left:10%;font-size: 80%; background-color: #82B300; border: 0; border-radius: 5px; padding: 3px; color: white; float: left">Dodaj do koszyka</button>
+                            <form action="/orders/create" method="POST">
+                            @csrf <!-- {{ csrf_field() }} -->
+                                {{ method_field('GET') }}
+                                <input type="hidden" name="id" value="{{$pizza->id}}">
+                                <input type="submit" value="Dodaj do koszyka" style="margin-left:10%;font-size: 80%; background-color: #82B300; border: 0; border-radius: 5px; padding: 3px; color: white; float: left">
+                            </form>
                         </div>
 
                     </div>

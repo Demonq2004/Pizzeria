@@ -21,4 +21,5 @@ Route::group(['prefix' => 'admin'], function () {
 });
 Route::get('/', 'PizzasController@list');
 Route::get('/pizzas/{id}', 'PizzasController@show');
+Route::get('/orders/create', 'OrdersController@create');
 

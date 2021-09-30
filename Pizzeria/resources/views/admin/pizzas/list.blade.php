@@ -22,7 +22,9 @@
                         <th scope="col">{{$pizza->id}}</th>
                         <td>{{ $pizza->nazwa }}</td>
                         <td>{{ $pizza->cena }}</td>
-                        <td>{{ $pizza->skladniki }}</td>
+                        <td>
+
+                        </td>
                         <td><img width="150" height="100" src="/storage/pizza/{{$pizza->id}}/{{$pizza->img}}"></td>
                         <td>
                             <form action="/admin/pizzas/{{$pizza->id}}" method="POST">

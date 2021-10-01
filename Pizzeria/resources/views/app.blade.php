@@ -52,24 +52,24 @@
 
 @yield('content')
 
-<footer class="w-100  bg-dark" style="height: 370px">
-    <div style="width: 40%; height: 300px; float: left" class="p-3">
+<footer class="row bg-dark" >
+    <div style="text-align:center;width: 40%; height: 300px; float: left" class="p-3 col-xl-4 col-sm-12 col-12">
         <img height="250" src="/storage/home/footerlogo.png" style="margin-left: 15%">
     </div>
-    <div style="width: 30%; height: 300px; float: left; color: white; font-size: 130%; line-height: 50px" class="p-3">
+    <div style="text-align:center;width: 30%; height: 300px; float: left; color: white; font-size: 130%; line-height: 50px" class="p-3 col-xl-4 col-sm-12 col-12">
         <h3 style="color: white">Skontaktuj się z nami</h3>
         <p>Pizza House</p>
         <p>pizza.house@contact.com</p>
         <p>853 912 526</p>
     </div>
-    <div style="width: 30%; height: 300px; float: left; color: white; font-size: 130%; line-height: 50px" class="p-3">
+    <div style="width: 30%; height: 300px; float: left; color: white; font-size: 130%; line-height: 50px; text-align: center" class="p-3 col-xl-4 col-sm-12 col-12">
         <h3 style="color: white">Lokalizacja</h3>
         <p>Katowice 4/1</p>
         <p>40-038 Katowice</p>
         <p>Polska</p>
     </div>
     <div style="width: 100%; height: 2px; background-color: white; float: left"></div>
-    <div class="p-3" style="font-size: 130%">
+    <div class="p-3 col-xl-12 col-sm-12 col-12" style="font-size: 130%; text-align: center">
         <p style="color: white;">&copy; 2021 Pizza House - Dawid Grzegorzek</p>
     </div>
 </footer>

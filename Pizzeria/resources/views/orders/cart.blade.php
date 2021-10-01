@@ -33,8 +33,10 @@
                             </tr>
                         @endforeach
                         <tr>
+
                             <td></td>
                             <td style="text-align: center; background-color: #f8f8f8" class="col-xl col-lg">
+                                <div style="height: 2px; background-color: white; width: 100%"></div>
                                 <div style="float: right; height: 150px" class="col-12">
                                     <p style="margin-top: 10%">W sumie:</p>
                                     <p>

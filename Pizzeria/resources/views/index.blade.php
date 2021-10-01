@@ -9,10 +9,10 @@
                 <p class=" hbaner" style="color: white;">House</p>
 
             </div>
-            <div style="width: 450px; height: 50px; background-color: white; text-align: center; margin-left: 38%; margin-top: 50px">
-                <p style="line-height: 50px; font-size: 150%; font-weight: 200; letter-spacing: 2px">POSIADAMY RODZAJÓW PIZZY</p>
+            <div style="text-align: center">
+                <button disabled style="border: none ;width: 450px; height: 50px; background-color: white; text-align: center; margin-top: 50px; line-height: 50px; font-size: 150%; font-weight: 200; letter-spacing: 2px">POSIADAMY RODZAJÓW PIZZY</button>
             </div>
-            <div style="margin-left: 30%; margin-top: 50px">
+            <div style="text-align: center; margin-top: 40px">
                 <button style="border: 1px solid white; background-color: transparent; color: white; width: 350px; height: 50px;font-size: 150%;letter-spacing: 2px" onclick="window.location=('#menu')">ZOBACZ NASZE MENU</button>
                 <button style="margin-left: 5%;border: 0; ;background-color: red; color: white; width: 350px; height: 50px;font-size: 150%;letter-spacing: 2px" onclick="window.location=('#kontakt')">SKONTAKTUJ SIĘ Z NAMI</button>
 
@@ -25,7 +25,7 @@
             <h1 class="text-center" style="width: 100%; height: 70px" >Nasze Menu</h1>
             <div class="row" id="menu" style="width: 80%; margin-left: 10%">
                 @foreach($pizzas as $pizza)
-                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 my-3 px-0" style="background-color: #f8f8f8">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12 my-3 px-0" style="background-color: #f8f8f8; border: 10px solid white">
                         <img class="col-12" height="200" src="/storage/pizza/{{$pizza->id}}/{{$pizza->img}}">
                         <div class="px-3">
                             <p style="font-size: 120%" class="text-uppercase pt-3"><b><a style="color: black; text-decoration: none" href="/pizzas/{{$pizza->id}}" >{{$pizza->nazwa}}</a></b></p>
@@ -47,14 +47,14 @@
                 @endforeach
             </div>
 
-            <div id="opinie" style="width: 80%; margin-left: 10%; margin-top: 30px; min-height: 450px">
+            <div id="onas" style="width: 80%; margin-left: 10%; margin-top: 30px; min-height: 450px" class="row">
                 <h1 class="text-center" style="width: 100%; height: 70px" >O nas</h1>
-                <img src="/storage/home/indeks.jpg " height="400" style="width: 40%; float: left">
-                <p style="width: 58%; float: left; margin-left: 2%" class="text-center">
+                <div class="col-xl-4 col-lg-5 col-sm-12 col-12" style="float: left"><img src="/storage/home/indeks.jpg " style="width: 100%"></div>
+                <div  class="col-xl-8 col-lg-7 col-sm-12 col-12"  style="float: left"><p class="text-center">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet augue a lorem consequat, a efficitur nibh eleifend. In mi magna, mattis non orci quis, viverra tincidunt magna. Aenean tempor lorem et mauris elementum blandit. Morbi pulvinar diam quis hendrerit ultrices. Curabitur eget pellentesque magna. Praesent quis posuere magna. Duis cursus massa sit amet risus auctor pretium.
 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum, justo id tincidunt maximus, est nisl finibus enim, non condimentum sem est id est. Sed ut elementum libero. Quisque diam sem, dictum ac interdum sit amet, laoreet sed tortor. Proin ut tristique sapien. Phasellus non ante non risus pulvinar luctus. Proin ac luctus ante. Mauris placerat ante eu felis hendrerit consequat. Donec fermentum mattis aliquet. Nullam pharetra ex et elementum efficitur. Mauris iaculis diam ut ligula euismod, eget congue ante imperdiet.
-                </p>
+                    </p></div>
             </div>
 
 

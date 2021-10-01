@@ -18,7 +18,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPrice">Cena Pizzy</label>
-                                <input type="number" class="form-control" name="cena" id="exampleInputPrice" placeholder="Cena" required {{ old('cena') }}>
+                                <input type="number" class="form-control" name="cena" min="0" id="exampleInputPrice" placeholder="Cena" required {{ old('cena') }}>
                             </div>
                             <table class="table">
                                 <thead class="table-light">

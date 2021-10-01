@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Koszyk 2">
+    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Koszyk v3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/pizzas/add_pizza.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/pizzas/add_pizza.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/cart.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/order.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633082823148</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Koszyk v3">
+      <created>1633084114499</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1633084114499</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +326,7 @@
     <MESSAGE value="Karta" />
     <MESSAGE value="Koszyk" />
     <MESSAGE value="Koszyk 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Koszyk 2" />
+    <MESSAGE value="Koszyk v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Koszyk v3" />
   </component>
 </project>

@@ -40,6 +40,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/#dostawcy">Nasi Dostawcy</a>
                     </li>
+
                     <li class="my-2 my-lg-0 nav-item">
                         <a class="nav-link" href="/show-cart"><i class="fas fa-shopping-cart"></i> Koszyk</a>
                     </li>

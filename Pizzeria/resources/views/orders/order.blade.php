@@ -27,10 +27,11 @@
                             </select>
                             <select class="form-select" name="sos">
                                 <option selected>Wybierz sos do pizzy</option>
-                                <option value="sos_pomidorowy">Sos pomidorowy</option>
-                                <option value="sos_czosnkowy">Sos czosnkowy</option>
-                                <option value="sos_ostry">Sos ostry</option>
+                                <option value="sos pomidorowy">Sos pomidorowy</option>
+                                <option value="sos czosnkowy">Sos czosnkowy</option>
+                                <option value="sos ostry">Sos ostry</option>
                             </select>
+                            <input type="hidden" name="cena" value="{{$pizza->cena}}">
                             <input type="number" name="ilosc" placeholder="Ilość">
                             <input type="submit" value="Dodaj do koszyka" style="font-size: 80%; background-color: #82B300; border: 0; border-radius: 5px; padding: 3px; color: white;">
                         </form>

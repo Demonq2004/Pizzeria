@@ -124,8 +124,15 @@ class OrdersController extends Controller
     }
     public function showCart(){
         //session()->flush();
-        $carts = session()->get('cart');
 
+        $carts = session()->get('cart');
         return view('orders/cart');
+    }
+    public function usunPizza($id){
+        $cart = session()->get('cart');
+        unset($cart[$id]);
+        session()->put('cart', $cart);
+
+        return redirect()->back();
     }
 }

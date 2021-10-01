@@ -24,4 +24,4 @@ Route::get('/pizzas/{id}', 'PizzasController@show');
 Route::resource('orders', OrdersController::class);
 Route::post('/orders/add-to-cart', 'OrdersController@addToCart');
 Route::get('/show-cart', 'OrdersController@showCart');
-
+Route::get('/usun-pizza/{id}','OrdersController@usunPizza');

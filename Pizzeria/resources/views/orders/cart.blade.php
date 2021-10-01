@@ -9,7 +9,7 @@
             <h1 class="text-center">Twój koszyk</h1>
             <div style="width: 60%; margin-left: 20%; margin-top: 50px">
                 <table>
-                    @if(isset($carts))
+                    @if(isset($carts) && $carts != null)
                         @foreach($carts as $cart)
                             <tr>
                                 <td class="col-xl-10">
@@ -17,7 +17,7 @@
                                     <div style="margin-left: 20px; float: left">
                                         <h3 class="text-uppercase">{{$cart['pizza_nazwa']}}</h3>
                                         <p>{{$cart['sos']}}, {{$cart['rozmiar']}}cm , {{$cart['ilosc']}}szt.</p>
-                                        <p><a href="" class="btn btn-danger">Usuń</a> </p>
+                                        <p><a href="usun-pizza/{{$cart['id']}}" class="btn btn-danger">Usuń</a> </p>
                                     </div>
                                 </td>
                                 <td style="text-align: center; background-color: #f8f8f8" class="col-xl col-lg">

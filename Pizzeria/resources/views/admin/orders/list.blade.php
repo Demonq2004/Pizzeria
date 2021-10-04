@@ -26,7 +26,12 @@
                     @foreach($orders as $order)
                         <tr>
                             <th scope="col">{{$order->id}}</th>
-                            <td>{{$order->order}}</td>
+                            <td>
+                                @php
+                                    $json = var_dump(json_decode($order->order));
+                                    //niestety nie wiem jak to zrobić :/
+                                 @endphp
+                            </td>
                             <td>{{$order->miejsce}}</td>
                             <td>{{$order->telefon}}</td>
                             <td>{{$order->miejscowosc}}</td>

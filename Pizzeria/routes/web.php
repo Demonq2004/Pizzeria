@@ -26,4 +26,4 @@ Route::post('/orders/add-to-cart', 'OrdersController@addToCart');
 Route::get('/show-cart', 'OrdersController@showCart');
 Route::get('/usun-pizza/{id}','OrdersController@usunPizza');
 Route::get('/place-order', 'OrdersController@placeOrder');
-Route::post('/orders/order', 'OrdersController@order');
+Route::post('/orders/order', 'OrdersController@saveOrder');

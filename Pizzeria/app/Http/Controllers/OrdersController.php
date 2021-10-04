@@ -139,12 +139,16 @@ class OrdersController extends Controller
 
         return redirect()->back();
     }
+
+
     public function placeOrder(){
 
         return view('orders/place_order');
     }
-    public function order(Request $request){
-        $order = session()->get('order');
+
+
+    public function saveOrder(Request $request){
+        $order = session()->get('cart');
 
         if($request->miejsce == "na_adres") {
             $request->validate([
@@ -154,11 +158,8 @@ class OrdersController extends Controller
             ]);
         }
 
-//        if(($request->miejsce == "na_adres") && ($request->miejscowosc == null || $request->adres == null || $request->kodPocztowy == null)){
-//            return redirect('/place-order')->with('error', 'Nie podano miejscowości, adresu lub kodu pocztowego!');
-//        }else {
-
-            $order[] = [
+        $items = json_encode(session()->get('cart'));
+        $customer = [
                 'miejsce' => $request->miejsce,
                 'miejscowosc' => $request->miejscowosc,
                 'adres' => $request->adres,
@@ -170,9 +171,8 @@ class OrdersController extends Controller
                 'telefon4' => $request->telefon4,
                 'godzina' => $request->godzinadostarczenia
             ];
-            session()->put('order', $order);
-            dd($order);
-            return redirect('/')->with('success', 'Złożono zamówienie');
+
+        return redirect('/')->with('success', 'Złożono zamówienie');
         }
 //    }
 }

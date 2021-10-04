@@ -49,8 +49,8 @@
                         <p>Koszyk jest pusty</p>
                     @endif
                 </table>
-                <button class="btn btn-primary">Kontynuuj zakupy</button>
-                <button class="btn btn-primary">Złóż zamówienie</button>
+                <a class="btn btn-primary" style="color: white" href="/#menu">Kontynuuj zakupy</a>
+                <a class="btn btn-primary" style="color: white" href="/place-order">Złóż zamówienie</a>
             </div>
         </article>
     </div>

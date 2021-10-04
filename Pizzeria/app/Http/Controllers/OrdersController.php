@@ -137,4 +137,32 @@ class OrdersController extends Controller
 
         return redirect()->back();
     }
+    public function placeOrder(){
+
+        return view('orders/place_order');
+    }
+    public function order(Request $request){
+        $order = session()->get('order');
+
+        if(($request->miejsce == "na_adres") && ($request->miejscowosc == null || $request->adres == null || $request->kodPocztowy == null)){
+            return redirect('/place-order')->with('error', 'Nie podano miejscowości, adresu lub kodu pocztowego!');
+        }else {
+
+            $order[] = [
+                'miejsce' => $request->miejsce,
+                'miejscowosc' => $request->miejscowosc,
+                'adres' => $request->adres,
+                'kod_pocztowy' => $request->kodPocztowy,
+                'telefon' => $request->telefon,
+                'telefon1' => $request->telefon1,
+                'telefon2' => $request->telefon2,
+                'telefon3' => $request->telefon3,
+                'telefon4' => $request->telefon4,
+                'godzina' => $request->godzinadostarczenia
+            ];
+            session()->put('order', $order);
+            dd($order);
+            return redirect('/')->with('success', 'Złożono zamówienie');
+        }
+    }
 }

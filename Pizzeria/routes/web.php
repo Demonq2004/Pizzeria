@@ -18,6 +18,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/pizzas/usun-skladnik/{id}', 'PizzasController@usunSkladnik');
     Route::resource('products', ProductsController::class);
     Route::resource('pizzas', PizzasController::class);
+    Route::resource('orders', OrdersController::class);
 });
 Route::get('/', 'PizzasController@list');
 Route::get('/pizzas/{id}', 'PizzasController@show');

@@ -26,7 +26,13 @@
                     @foreach($orders as $order)
                         <tr>
                             <th scope="col">{{$order->id}}</th>
-                            <td>{{$order->order}}</td>
+                            <td>
+                                @php $items = json_decode($order->order, true); @endphp
+                                @foreach($items as $item)
+                                  {{ $item['pizza_nazwa'] }}<br>
+                                    <p>roz: {{ $item['rozmiar'] }}, {{ $item['sos'] }}</p>
+                                @endforeach
+                            </td>
                             <td>{{$order->miejsce}}</td>
                             <td>{{$order->telefon}}</td>
                             <td>{{$order->miejscowosc}}</td>

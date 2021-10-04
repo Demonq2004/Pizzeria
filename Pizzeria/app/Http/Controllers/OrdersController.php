@@ -146,11 +146,13 @@ class OrdersController extends Controller
     public function order(Request $request){
         $order = session()->get('order');
 
-        $request->validate([
-            'miejsce' => 'required',
-            'miejscowosc' => 'required',
-            'adres' => 'required',
-        ]);
+        if($request->miejsce == "na_adres") {
+            $request->validate([
+                'miejscowosc' => 'required',
+                'adres' => 'required',
+                'kodPocztowy' => 'required'
+            ]);
+        }
 
 //        if(($request->miejsce == "na_adres") && ($request->miejscowosc == null || $request->adres == null || $request->kodPocztowy == null)){
 //            return redirect('/place-order')->with('error', 'Nie podano miejscowości, adresu lub kodu pocztowego!');

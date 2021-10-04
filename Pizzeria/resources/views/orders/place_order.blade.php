@@ -3,42 +3,37 @@
 @section('content')
     <div class="main-page" style="margin-top: 100px;width: 60%; margin-left: 20%">
         <article class="content px-5 py-5 p-md-5" style=" min-height: 400px">
-            <div class="alert-success">
-                @include('alerts')
-            </div>
-            @if($errors->any())
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            @endif
             <form action="/orders/order" method="POST">
             @csrf <!-- {{ csrf_field() }} -->
                 <div class="form-check">
-                    <input class="form-check-input" value="na_miejscu"  type="radio" name="miejsce" id="miejsce1" onchange="namiejscu()">
+                    <input class="form-check-input" value="na_miejscu"  type="radio" name="miejsce" id="miejsce1" onchange="namiejscu()" required>
                     <label class="form-check-label"  for="flexRadioDefault1"> Zamów na miejscu </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" value="na_adres" type="radio" name="miejsce" id="miejsce2" onchange="pokazAdres()">
+                    <input class="form-check-input" value="na_adres" type="radio" name="miejsce" id="miejsce2" onchange="pokazAdres()" required checked>
                     <label class="form-check-label" for="flexRadioDefault2"> Zamów na adres </label>
                 </div>
                 <div class="form-group">
                     <label for="tel">Numer Telefonu:</label>
-                    <input class="form-control" id="tel" type="number" minlength="9" maxlength="9" name="telefon" required>
+                    <input type="tel" id="phone" name="telefon"
+                           pattern="[0-9]{9}"
+                           required class="form-control">
                 </div>
-                <div id="adres" style="margin-top: 30px; margin-left: 30px; display: block" >
+                <div id="adres" style="display: block" >
                     <div class="form-group">
                         <label for="miejscowosc">Miejscowość:</label>
                         <input class="form-control" id="miejscowosc" type="text" name="miejscowosc">
-                        @error('miejscowosc') {{ $message }} @enderror
+                        @error('miejscowosc') <p style="color: red">{{ $message }}</p> @enderror
                     </div>
                     <div class="form-group">
                         <label for="adres">Adres:</label>
                         <input  class="form-control" id="adres" type="text" name="adres" >
-                        @error('adres') {{ $message }} @enderror
+                        @error('adres') <p style="color: red">{{ $message }}</p>@enderror
                     </div>
                     <div class="form-group">
                         <label for="kod">Kod Pocztowy:</label>
                         <input class="form-control" id="kod" type="text" name="kodPocztowy" >
+                        @error('kodPocztowy') <p style="color: red">{{ $message }}</p> @enderror
                     </div>
 
 

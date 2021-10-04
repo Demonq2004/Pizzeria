@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pizza;
+use App\Order;
 use Illuminate\Support\Facades\Validator;
 
 class OrdersController extends Controller
@@ -171,6 +172,23 @@ class OrdersController extends Controller
                 'telefon4' => $request->telefon4,
                 'godzina' => $request->godzinadostarczenia
             ];
+
+        Order::create([
+            'order' => $items,
+            'miejsce' => $request->miejsce,
+            'telefon' => $request->telefon,
+            'Miejscowosc' => $request->miejscowosc,
+            'Ul_adres' => $request->adres,
+            'kod_pocztowy' => $request->kodPocztowy,
+            'Czas_Dostarczenia' => $request->godzinadostarczenia,
+            'Cena' => null,
+            'Status' => 1,
+            'tel1' => $request->telefon1,
+            'tel2' => $request->telefon2,
+            'tel3' => $request->telefon3,
+            'tel4' => $request->telefon4
+
+        ]);
 
         return redirect('/')->with('success', 'Złożono zamówienie');
         }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Składanie zamówienia">
+    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Składanie zamówienia - validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/lang/en/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_24_113932_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_24_113932_create_orders_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +190,7 @@
       <workItem from="1633005343571" duration="1250000" />
       <workItem from="1633069972115" duration="11195000" />
       <workItem from="1633175751924" duration="2023000" />
-      <workItem from="1633328980498" duration="10233000" />
+      <workItem from="1633328980498" duration="12942000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -311,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633337206386</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Składanie zamówienia - validation">
+      <created>1633343748533</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1633343748533</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +349,7 @@
     <MESSAGE value="Koszyk v3" />
     <MESSAGE value="Responsywność strony, poprawki wizualne" />
     <MESSAGE value="Składanie zamówienia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Składanie zamówienia" />
+    <MESSAGE value="Składanie zamówienia - validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Składanie zamówienia - validation" />
   </component>
 </project>

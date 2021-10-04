@@ -16,16 +16,18 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('order');
-            $table->text('Miejscowosc');
-            $table->text('Ul_adres');
-            $table->text('kod_pocztowy');
-            $table->datetime('Czas_Dostarczenia');
-            $table->double('Cena',5, 2);
+            $table->text('miejsce');
+            $table->integer('telefon')->length(9);
+            $table->text('Miejscowosc')->nullable();
+            $table->text('Ul_adres')->nullable();
+            $table->text('kod_pocztowy')->nullable();
+            $table->time('Czas_Dostarczenia')->nullable();
+            $table->double('Cena',5, 2)->nullable();
             $table->integer('Status');
-            $table->integer('tel1')->length(9);
-            $table->integer('tel2')->length(9);
-            $table->integer('tel3')->length(9);
-            $table->integer('tel4')->length(9);
+            $table->integer('tel1')->length(9)->nullable();
+            $table->integer('tel2')->length(9)->nullable();
+            $table->integer('tel3')->length(9)->nullable();
+            $table->integer('tel4')->length(9)->nullable();
             $table->timestamps();
         });
     }

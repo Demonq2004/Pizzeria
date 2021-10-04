@@ -90,7 +90,6 @@ class OrdersController extends Controller
 
             $id = $request->pizza_id;
             $pizza = Pizza::find($id);
-            if (!$cart) {
                 if ($request->rozmiar == '45') {
                     $cenar = $request->cena * 1.3;
                     $cenaogl = $cenar * $request->ilosc;
@@ -108,8 +107,7 @@ class OrdersController extends Controller
                     $request->sos = 'brak sosu';
                 }
 
-                $cart = [
-                    $id => [
+                $cart[$id] = [
                         'id' => $request->pizza_id,
                         'pizza_nazwa' => $pizza->nazwa,
                         'rozmiar' => $request->rozmiar,
@@ -117,11 +115,9 @@ class OrdersController extends Controller
                         'ilosc' => $request->ilosc,
                         'cena_szt' => $cenar,
                         'cena_ogl' => $cenaogl
-
-                    ]
                 ];
                 session()->put('cart', $cart);
-            }
+
             return redirect('/')->with('success', $pizza->nazwa . ' dodana do koszyka');
         }else{
             return redirect('/')->with('error', 'Nie dodano do koszyka powód: brak wybranego rozmiaru');

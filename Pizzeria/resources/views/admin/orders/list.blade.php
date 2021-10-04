@@ -27,8 +27,7 @@
                         <tr>
                             <th scope="col">{{$order->id}}</th>
                             <td>
-                                @php $items = json_decode($order->order, true); @endphp
-                                @foreach($items as $item)
+                                @foreach(json_decode($order->order, true) as $item)
                                   {{ $item['pizza_nazwa'] }}<br>
                                     <p>roz: {{ $item['rozmiar'] }}, {{ $item['sos'] }}</p>
                                 @endforeach

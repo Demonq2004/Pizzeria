@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pizza;
+use Illuminate\Support\Facades\Validator;
+
 class OrdersController extends Controller
 {
     /**
@@ -144,9 +146,15 @@ class OrdersController extends Controller
     public function order(Request $request){
         $order = session()->get('order');
 
-        if(($request->miejsce == "na_adres") && ($request->miejscowosc == null || $request->adres == null || $request->kodPocztowy == null)){
-            return redirect('/place-order')->with('error', 'Nie podano miejscowości, adresu lub kodu pocztowego!');
-        }else {
+        $request->validate([
+            'miejsce' => 'required',
+            'miejscowosc' => 'required',
+            'adres' => 'required',
+        ]);
+
+//        if(($request->miejsce == "na_adres") && ($request->miejscowosc == null || $request->adres == null || $request->kodPocztowy == null)){
+//            return redirect('/place-order')->with('error', 'Nie podano miejscowości, adresu lub kodu pocztowego!');
+//        }else {
 
             $order[] = [
                 'miejsce' => $request->miejsce,
@@ -164,5 +172,5 @@ class OrdersController extends Controller
             dd($order);
             return redirect('/')->with('success', 'Złożono zamówienie');
         }
-    }
+//    }
 }

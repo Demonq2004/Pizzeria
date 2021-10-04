@@ -6,6 +6,11 @@
             <div class="alert-success">
                 @include('alerts')
             </div>
+            @if($errors->any())
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            @endif
             <form action="/orders/order" method="POST">
             @csrf <!-- {{ csrf_field() }} -->
                 <div class="form-check">
@@ -20,14 +25,16 @@
                     <label for="tel">Numer Telefonu:</label>
                     <input class="form-control" id="tel" type="number" minlength="9" maxlength="9" name="telefon" required>
                 </div>
-                <div id="adres" style="margin-top: 30px; margin-left: 30px; display: none" >
+                <div id="adres" style="margin-top: 30px; margin-left: 30px; display: block" >
                     <div class="form-group">
                         <label for="miejscowosc">Miejscowość:</label>
                         <input class="form-control" id="miejscowosc" type="text" name="miejscowosc">
+                        @error('miejscowosc') {{ $message }} @enderror
                     </div>
                     <div class="form-group">
                         <label for="adres">Adres:</label>
                         <input  class="form-control" id="adres" type="text" name="adres" >
+                        @error('adres') {{ $message }} @enderror
                     </div>
                     <div class="form-group">
                         <label for="kod">Kod Pocztowy:</label>

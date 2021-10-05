@@ -84,7 +84,10 @@ class OrdersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+
+        $order->delete();
+        return redirect()->back();
     }
 
     public function addToCart(Request $request)
@@ -190,7 +193,7 @@ class OrdersController extends Controller
             'tel4' => $request->telefon4
 
         ]);
-
+        session()->forget('cart');
         return redirect('/')->with('success', 'Złożono zamówienie');
         }
 //    }

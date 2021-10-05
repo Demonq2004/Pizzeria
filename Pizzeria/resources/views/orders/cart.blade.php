@@ -17,7 +17,7 @@
                                     <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-12 col-12" src="/storage/pizza/{{$cart['id']}}/pizza_img.jpg">
                                     <div style="margin-left: 20px; float: left">
 
-                                        <h3 class="text-uppercase"></h3>
+                                        <h4 class="text-uppercase">{{$cart['pizza_nazwa']}}</h4>
                                         <p>{{$cart['sos']}}, {{$cart['rozmiar']}}cm , {{$cart['ilosc']}}szt.</p>
                                         <p><a href="usun-pizza/{{$cart['id']}}" class="btn btn-danger">Usuń</a> </p>
                                     </div>
@@ -45,12 +45,15 @@
                             </td>
                             <td></td>
                         </tr>
+
                     @else
                         <p>Koszyk jest pusty</p>
                     @endif
                 </table>
+                @if(isset($carts) && $carts != null)
                 <a class="btn btn-primary" style="color: white" href="/#menu">Kontynuuj zakupy</a>
                 <a class="btn btn-primary" style="color: white" href="/place-order">Złóż zamówienie</a>
+                @endif
             </div>
         </article>
     </div>

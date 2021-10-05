@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <title>Blog Site Template</title>
+    <title>Pizza House</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +52,7 @@
 
 @yield('content')
 
-<footer class="row bg-dark" >
+<footer class="row bg-dark" style="width: 105%">
     <div style="text-align:center;width: 40%; height: 300px; float: left" class="p-3 col-xl-4 col-sm-12 col-12">
         <img height="250" src="/storage/home/footerlogo.png" style="margin-left: 15%">
     </div>

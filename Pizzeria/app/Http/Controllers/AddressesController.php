@@ -1,25 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\User;
-use App\Pizza;
-use App\Order;
-use App\Point;
 use App\Address;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Symfony\Component\HttpKernel\Profiler\Profile;
 
-class ProfilesController extends Controller
+class AddressesController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('role');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -27,11 +15,7 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        $user = User::findOrFail(Auth::id());
-        $orders = Order::where('user_id',Auth::id())->get();
-        $points = Point::where('user_id',Auth::id())->get();
-        $addresses = Address::where('user_id',Auth::id())->get();
-        return view('profil/profil', ['user' => $user, 'orders' => $orders, 'points'=>$points, 'addresses' => $addresses]);
+        //
     }
 
     /**
@@ -41,7 +25,7 @@ class ProfilesController extends Controller
      */
     public function create()
     {
-        //
+        return view('/profil/adres/add_address');
     }
 
     /**
@@ -52,7 +36,15 @@ class ProfilesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Address::create([
+            'user_id' => $request->user_id,
+            'nazwa' => $request->nazwa,
+            'Miejscowosc' => $request->miejscowosc,
+            'Ul_adres' => $request->adres,
+            'kod_pocztowy' => $request->kod_pocztowy
+        ]);
+        return redirect('/profil')->with('success', 'Poprawnie dodano adres');;
     }
 
     /**
@@ -97,8 +89,8 @@ class ProfilesController extends Controller
      */
     public function destroy($id)
     {
-        $profile = User::find($id);
-        $profile->delete();
-        return redirect('/')->with('success', 'Poprawnie usunięto konto');;
+        $adres = Address::find($id);
+        $adres->delete();
+        return redirect('/profil')->with('success', 'Poprawnie usunięto adres');
     }
 }

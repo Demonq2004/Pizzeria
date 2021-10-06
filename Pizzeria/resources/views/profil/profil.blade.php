@@ -1,43 +1,53 @@
 @extends('app')
-
+@php
+    $punkty = 0;
+    @endphp
 @section('content')
-    <div class="main-page" style="margin-top: 96px" class="row">
+    <div class="main-page" style="margin-top: 96px" class="row p-3">
+        <div class="alert-success">
+            @include('alerts')
+        </div>
         <div style="float: left;" class="p-3 text-center col-xl-6 col-12">
             <h1 style="font-size: 300%">Twój Profil</h1> <!-- Jesli to jest profil innego uzytkownika to wysiwetla: Profil uzytkownika: nazwa -->
             <p class="text-uppercase" style="font-size: 180%;margin-top: 5%">{{ $user->name }}</p>
             <!-- Wyświetla się to wtedy jeśli to jest własne konto -->
             <p>Email: {{$user->email}}</p>
-            <p>Telefon: 645432123</p>
-            <a href="" class="btn btn-info">Edytuj Profil</a>
-            <a href="" class="btn btn-danger">Usuń Profil</a>
+            <p>Telefon: {{$user->telefon}}</p>
+
+            <form action="/profil/{{$user->id}}" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <button type="submit" class="btn btn-group-sm btn-danger delete-user m-0">Usuń konto</button>
+                <a href="" class="btn btn-info">Edytuj Profil</a>
+            </form>
 
         </div>
         <div style=" float: left;border-left: 2px solid #f1f1f1" class="p-3 text-center col-xl-6 col-12">
             <!-- Wyświetla się to wtedy jeśli to jest własne konto -->
             <h1 style="font-size: 300%">Twoje Adresy</h1>
             <div class="row">
-            <div class="col-xl-6 col-sm-12" style=" border: 5px solid white">
-                <div style="width: 100%; height: 100%; border: 1px solid purple; padding: 20px">
-                    <h4>Adres 1</h4>
-                    <p><b>Miejscowość:</b> Żory</p>
-                    <p><b>Adres:</b> Bajadera 1</p>
-                    <p><b>Kod Pocztowy:</b> 41-120</p>
-                    <a href="" class="btn btn-info">Edytuj Adres</a>
-                    <a href="" class="btn btn-danger">Usuń Adres</a>
+                @foreach($addresses as $address)
+                <div class="col-xl-6 col-sm-12" style=" border: 5px solid white">
+                    <div style="width: 100%; height: 100%; border: 1px solid purple; padding: 20px">
+                        <h4>{{$address->nazwa}}</h4>
+                        <p><b>Miejscowość:</b> {{$address->Miejscowosc}}</p>
+                        <p><b>Adres:</b> {{$address->Ul_adres}}</p>
+                        <p><b>Kod Pocztowy:</b> {{$address->kod_pocztowy}}</p>
+
+                        <form action="/profil/adres/{{$address->id}}" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-danger">Usuń Adres</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xl-6 col-sm-12" style="border: 5px solid white">
-                <div style="width: 100%; height: 100%; border: 1px solid purple; padding: 20px">
-                    <h4>Adres 2</h4>
-                    <p><b>Miejscowość:</b> Pszczyna</p>
-                    <p><b>Adres:</b> Korfantego 5</p>
-                    <p><b>Kod Pocztowy:</b> 42-122</p>
-                    <a href="" class="btn btn-info">Edytuj Adres</a>
-                    <a href="" class="btn btn-danger">Usuń Adres</a>
-                </div>
-            </div>
+                @endforeach
             </div>
             <!-- Jesli to czyjes konto i uzytkownik posiada konto to wyswietla sie przycisk zapros do znajomych -->
+
+            <div class="text-center col-12">
+                <a style="margin-top: 20px" href="/profil/adres/create" type="button" class="btn btn-success ">Dodaj adres</a>
+            </div>
         </div>
 
         <div style=" float: left;margin-top: 100px;" class="p-3 text-center col-xl-6 col-12">
@@ -48,7 +58,6 @@
 
                         @foreach($orders as $order)
                     @if($order->Status == 2)
-
                             @foreach(json_decode($order->order, true) as $item)
                             <tr>
                                 <td class="col-xl-10">
@@ -71,7 +80,6 @@
                     </td>
                             </tr>
                         @endforeach
-
                     @endif
                     @endforeach
 
@@ -92,7 +100,13 @@
             </div>
             <div style="width: 100% ;float: left; margin-top: 100px;border-left: 2px solid #f1f1f1">
                 <h1 style="font-size: 200%;margin-bottom: 50px">Posiadana ilość punktów</h1>
-                <p style="font-size: 250%;">1021</p>
+                @foreach($points as $point)
+                    @php
+                        $punkty = $punkty + $point->ilosc;
+                    @endphp
+
+                @endforeach
+                <p style="font-size: 250%;">{{$punkty}}</p>
 
             </div>
             <div style="width: 100% ; float: left; margin-top: 100px;border-left: 2px solid #f1f1f1">
@@ -108,12 +122,6 @@
 
                                         <h4 class="text-uppercase">{{ $item['pizza_nazwa'] }}</h4>
                                         <p>{{ $item['rozmiar'] }}, {{ $item['sos'] }}, {{$item['ilosc']}}szt.</p>
-                                        <p><b>Data zamówienia: </b>{{$order->created_at}}</p>
-                                        <form action="/orders/{{$order->id}}" method="POST">
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <button type="submit" class="btn btn-group-sm btn-danger delete-user m-0">Anuluj</button>
-                                        </form>
                                     </div>
                             </td>
                             <td style="text-align: center; background-color: #f8f8f8">
@@ -127,6 +135,20 @@
                                 </td>
                                 </tr>
                             @endforeach
+                            <tr>
+                                <td class="col-xl-10">
+                                    <form action="/orders/{{$order->id}}" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <button type="submit" class="btn btn-group-sm btn-danger delete-user m-0">Anuluj</button>
+                                    </form>
+                                    <hr>
+                                </td>
+                                <td style="text-align: center; background-color: #f8f8f8">
+                                    <div style="float: right;" class="col-12">
+                                    </div>
+                                </td>
+                            </tr>
                         @endif
                     @endforeach
                 </table>

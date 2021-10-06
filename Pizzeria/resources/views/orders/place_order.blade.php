@@ -1,5 +1,11 @@
 @extends('app')
-
+@php
+    if(Auth::check()){
+    $phone = Auth::user()->telefon;
+}else{
+    $phone = null;
+}
+@endphp
 @section('content')
     <div class="main-page" style="margin-top: 100px;width: 60%; margin-left: 20%">
         <article class="content px-5 py-5 p-md-5" style=" min-height: 400px">
@@ -16,10 +22,16 @@
                 <div class="form-group">
                     <label for="tel">Numer Telefonu:</label>
                     <input type="tel" id="phone" name="telefon"
-                           pattern="[0-9]{9}"
+                           pattern="[0-9]{9}" value="{{$phone}}"
                            required class="form-control">
                 </div>
                 <div id="adres" style="display: block" >
+                @if(Auth::check())
+                    @foreach($addresses as $address)
+                        {{$address->nazwa}}
+                        @endforeach
+                @else
+
                     <div class="form-group">
                         <label for="miejscowosc">Miejscowość:</label>
                         <input class="form-control" id="miejscowosc" type="text" name="miejscowosc">
@@ -41,10 +53,10 @@
                         <input class="form-check-input"  type="checkbox" name="powiadomcheckbox" id="powiadomcheckbox" onclick="powiadom()">
                         <label class="form-check-label" > Powiadom innych domowników przy dostarczeniu pizzy </label>
                         <div id="powiadom" style="margin-top: 20px; margin-left: 20px; display: none">
-                            <input  class="form-control" id="tel" type="number" minlength="9" maxlength="9" name="telefon1" placeholder="Podaj numer telefonu pierwszej osoby">
-                            <input class="form-control" id="tel" type="number" minlength="9" maxlength="9" name="telefon2" placeholder="Podaj numer telefonu drugiej osoby">
-                            <input class="form-control" id="tel" type="number" minlength="9" maxlength="9" name="telefon3" placeholder="Podaj numer telefonu trzeciej osoby">
-                            <input class="form-control" id="tel" type="number" minlength="9" maxlength="9" name="telefon4" placeholder="Podaj numer telefonu czwartej osoby">
+                            <input  class="form-control" id="tel" type="number" pattern="[0-9]{9}" minlength="9" maxlength="9" name="telefon1" placeholder="Podaj numer telefonu pierwszej osoby">
+                            <input class="form-control" id="tel" type="number" pattern="[0-9]{9}" minlength="9" maxlength="9" name="telefon2" placeholder="Podaj numer telefonu drugiej osoby">
+                            <input class="form-control" id="tel" type="number" pattern="[0-9]{9}" minlength="9" maxlength="9" name="telefon3" placeholder="Podaj numer telefonu trzeciej osoby">
+                            <input class="form-control" id="tel" type="number" pattern="[0-9]{9}" minlength="9" maxlength="9" name="telefon4" placeholder="Podaj numer telefonu czwartej osoby">
                             <small>Nie musisz wypełniać wszystkich pól!</small>
                         </div>
                     </div>
@@ -60,6 +72,8 @@
                         </div>
                     </div>
                     <input type="submit" value="Zamów" class="btn btn-success" style="margin-top: 20px">
+
+                    @endif
                 </div>
             </form>
             <script>

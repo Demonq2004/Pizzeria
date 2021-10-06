@@ -122,7 +122,8 @@ class AdminPizzasController extends Controller
             $pizza->img = $img_filename;
         }
         $pizza->save();
-        session()->flush();
+        session()->forget('pizza');
+        session()->forget('skladniki');
         return redirect('/admin/pizzas');
     }
 

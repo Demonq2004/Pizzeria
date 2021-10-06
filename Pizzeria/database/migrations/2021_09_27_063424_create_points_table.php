@@ -15,6 +15,7 @@ class CreatePointsTable extends Migration
     {
         Schema::create('points', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->integer('ilosc');
         });
     }

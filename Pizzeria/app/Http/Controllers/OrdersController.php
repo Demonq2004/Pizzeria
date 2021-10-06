@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pizza;
 use App\Order;
+use App\Point;
+use App\Address;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -72,10 +74,7 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $order = Order::find($id);
-        $order->Status = 2;
-        $order->save();
-        return redirect('admin/orders');
+
     }
 
     /**
@@ -87,7 +86,6 @@ class OrdersController extends Controller
     public function destroy($id)
     {
         $order = Order::find($id);
-
         $order->delete();
         return redirect()->back();
     }
@@ -155,13 +153,22 @@ class OrdersController extends Controller
 
     public function placeOrder(){
 
-        return view('orders/place_order');
+        if(Auth::check()){
+            $addresses = Address::where('user_id',Auth::user()->id)->get();
+
+        }else{
+            $addresses = null;
+        }
+
+        return view('orders/place_order',['addresses', $addresses]);
+
+
     }
 
 
     public function saveOrder(Request $request){
         $order = session()->get('cart');
-
+        $items = json_encode(session()->get('cart'));
         if($request->miejsce == "na_adres") {
             $request->validate([
                 'miejscowosc' => 'required',
@@ -174,7 +181,7 @@ class OrdersController extends Controller
         }else{
             $user_id = null;
         }
-        $items = json_encode(session()->get('cart'));
+
         $customer = [
                 'user_id'=>$user_id,
                 'order' => $items,

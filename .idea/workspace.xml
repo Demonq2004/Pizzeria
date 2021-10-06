@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Profil">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2021_11_24_[Changes]2/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2021_11_24__Changes_2.xml" beforeDir="false" />
+    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Profil, panel administratora">
+      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/adres/add_address.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Address.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminOrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminOrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminPizzasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminPizzasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/PizzasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/PizzasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_24_113932_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_24_113932_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Point.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Point.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_27_063424_create_points_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_27_063424_create_points_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_27_064026_create_addresses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_27_064026_create_addresses_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/orders/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/orders/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/verify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/routes/web.php" afterDir="false" />
     </list>
@@ -185,11 +177,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Pizzeria/app/Providers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\XAMP\htdocs\Pizzeria\Pizzeria\app\Providers" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -215,7 +212,7 @@
       <workItem from="1633175751924" duration="2023000" />
       <workItem from="1633328980498" duration="15374000" />
       <workItem from="1633414171920" duration="12100000" />
-      <workItem from="1633500279769" duration="10841000" />
+      <workItem from="1633500279769" duration="22916000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -371,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633431336685</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Profil, panel administratora">
+      <created>1633512148988</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1633512148988</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,6 +410,7 @@
     <MESSAGE value="Składanie zamówienia - dodanie do bazy" />
     <MESSAGE value="Składanie zamówienia - admin list" />
     <MESSAGE value="Profil" />
-    <option name="LAST_COMMIT_MESSAGE" value="Profil" />
+    <MESSAGE value="Profil, panel administratora" />
+    <option name="LAST_COMMIT_MESSAGE" value="Profil, panel administratora" />
   </component>
 </project>

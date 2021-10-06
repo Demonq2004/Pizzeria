@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Route;
     Route::post('/orders/order', 'OrdersController@saveOrder');
     Route::get('/orders/create', 'OrdersController@create');
     Route::get('/orders/order', 'OrdersController@saveOrder');
+    Route::resource('/profil/adres', AddressesController::class);
 
     Auth::routes();
 

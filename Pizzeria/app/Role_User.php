@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Point extends Model
+class Role_User extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['user_id','order_id','ilosc'];
+    protected $fillable = ['role_id', 'user_id'];
 }

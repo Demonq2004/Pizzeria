@@ -28,6 +28,7 @@ Route::get('/show-cart', 'OrdersController@showCart');
 Route::get('/usun-pizza/{id}','OrdersController@usunPizza');
 Route::get('/place-order', 'OrdersController@placeOrder');
 Route::post('/orders/order', 'OrdersController@saveOrder');
+Route::resource('profil', ProfilesController::class);
 
 Auth::routes();
 

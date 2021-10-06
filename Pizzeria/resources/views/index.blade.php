@@ -1,5 +1,7 @@
 @extends('app')
-
+@php
+    $liczba = 0;
+@endphp
 @section('content')
 
     <div class="main-page">
@@ -10,7 +12,14 @@
 
             </div>
             <div style="text-align: center">
-                <button disabled style="border: none ;width: 450px; height: 50px; background-color: white; text-align: center; margin-top: 50px; line-height: 50px; font-size: 150%; font-weight: 200; letter-spacing: 2px">POSIADAMY RODZAJÓW PIZZY</button>
+                <button disabled style="border: none ;width: 450px; height: 50px; background-color: white; text-align: center; margin-top: 50px; line-height: 50px; font-size: 150%; font-weight: 200; letter-spacing: 2px">POSIADAMY
+                    @foreach($pizzas as $pizza)
+                        @php
+                            $liczba+=1;
+                        @endphp
+                    @endforeach
+                    {{$liczba}}
+                    RODZAJÓW PIZZY</button>
             </div>
             <div style="text-align: center; margin-top: 40px">
                 <button style="border: 1px solid white; background-color: transparent; color: white; width: 350px; height: 50px;font-size: 150%;letter-spacing: 2px" onclick="window.location=('#menu')">ZOBACZ NASZE MENU</button>

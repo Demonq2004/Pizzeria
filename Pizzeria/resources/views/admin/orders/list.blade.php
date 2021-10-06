@@ -1,5 +1,4 @@
 @extends('app')
-
 @section('content')
     <div class="main-page" style="margin-top: 100px">
         <article class="content px-5 py-5 p-md-5" style=" min-height: 400px">
@@ -34,7 +33,7 @@
                             </td>
                             <td>{{$order->miejsce}}</td>
                             <td>{{$order->telefon}}</td>
-                            <td>{{$order->miejscowosc}}</td>
+                            <td>{{$order->Miejscowosc}}</td>
                             <td>{{$order->Ul_adres}}</td>
                             <td>{{$order->kod_pocztowy}}</td>
                             <td>{{$order->Czas_Dostarczenia}}</td>
@@ -44,6 +43,13 @@
                             <td>{{$order->tel4}}</td>
                             <td>{{$order->tel4}}</td>
                             <td>{{$order->tel4}}</td>
+                            <td>
+                                <form action="/admin/orders/{{$order->id}}" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <button type="submit" class="btn btn-group-sm btn-danger delete-user m-0"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

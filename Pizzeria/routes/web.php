@@ -18,7 +18,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/pizzas/usun-skladnik/{id}', 'PizzasController@usunSkladnik');
     Route::resource('products', ProductsController::class);
     Route::resource('pizzas', PizzasController::class);
-    Route::resource('orders', OrdersController::class);
+    Route::resource('orders', AdminOrdersController::class);
 });
 Route::get('/', 'PizzasController@list');
 Route::get('/pizzas/{id}', 'PizzasController@show');
@@ -28,3 +28,7 @@ Route::get('/show-cart', 'OrdersController@showCart');
 Route::get('/usun-pizza/{id}','OrdersController@usunPizza');
 Route::get('/place-order', 'OrdersController@placeOrder');
 Route::post('/orders/order', 'OrdersController@saveOrder');
+
+Auth::routes();
+
+//Route::get('/', 'HomeController@index')->name('home');

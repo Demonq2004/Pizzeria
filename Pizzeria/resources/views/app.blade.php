@@ -44,6 +44,18 @@
                     <li class="my-2 my-lg-0 nav-item">
                         <a class="nav-link" href="/show-cart"><i class="fas fa-shopping-cart"></i> Koszyk</a>
                     </li>
+                    <li class="my-2 my-lg-0 nav-item">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <form action="/logout" method="POST">
+                        @csrf <!-- {{ csrf_field() }} -->
+                            {{ method_field('POST') }}
+                            <button type="submit" class="nav-link btn-primary">Wyloguj</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </nav>

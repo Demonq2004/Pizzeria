@@ -6,7 +6,7 @@
             <h1 style="font-size: 300%">Twój Profil</h1> <!-- Jesli to jest profil innego uzytkownika to wysiwetla: Profil uzytkownika: nazwa -->
             <p class="text-uppercase" style="font-size: 180%;margin-top: 5%">{{ $user->name }}</p>
             <!-- Wyświetla się to wtedy jeśli to jest własne konto -->
-            <p>Email: jan@kowalski.com</p>
+            <p>Email: {{$user->email}}</p>
             <p>Telefon: 645432123</p>
             <a href="" class="btn btn-info">Edytuj Profil</a>
             <a href="" class="btn btn-danger">Usuń Profil</a>
@@ -43,47 +43,38 @@
         <div style=" float: left;margin-top: 100px;" class="p-3 text-center col-xl-6 col-12">
             <h1 style="font-size: 200%">Twoje Ostatnie Zamówienia</h1>
             <table style="margin-top: 50px">
-                <tr>
 
-                    <td class="col-xl-10">
-                        <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-12 col-12" src="/storage/pizza/1/pizza_img.jpg">
+
+
+                        @foreach($orders as $order)
+                    @if($order->Status == 2)
+
+                            @foreach(json_decode($order->order, true) as $item)
+                            <tr>
+                                <td class="col-xl-10">
+                        <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-12 col-12" src="/storage/pizza/{{ $item['id'] }}/pizza_img.jpg">
                         <div style="margin-left: 20px; float: left">
 
-                            <h4 class="text-uppercase">Pizza Serowa</h4>
-                            <p>Sos pomidorowy, 60cm , 1szt.</p>
-                            <p><b>Data zamówienia: </b>2021-10-05</p>
+                            <h4 class="text-uppercase">{{ $item['pizza_nazwa'] }}</h4>
+                            <p>{{ $item['rozmiar'] }}, {{ $item['sos'] }}, {{$item['ilosc']}}szt.</p>
+                            <p><b>Data zamówienia: </b>{{$order->created_at}}</p>
                         </div>
                     </td>
                     <td style="text-align: center; background-color: #f8f8f8">
                         <div style="float: right; height: 150px" class="col-12">
 
-                            <p style="font-size: 100%; margin-top: 10%; ">
-                                <strong>20 ZŁ</strong>
+                            <p style="font-size: 100%; margin-top: 15%; ">
+                                <strong>{{$item['cena_ogl']}} ZŁ</strong>
                             </p>
-                            <p>20 ZŁ (sztuka)</p>
+                            <p>{{$item['cena_szt']}} ZŁ (sztuka)</p>
                         </div>
                     </td>
-                </tr>
-                <tr>
-                    <td class="col-xl-10">
-                        <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-12 col-12" src="/storage/pizza/1/pizza_img.jpg">
-                        <div style="margin-left: 20px; float: left">
+                            </tr>
+                        @endforeach
 
-                            <h4 class="text-uppercase">Pizza Serowa</h4>
-                            <p>Sos pomidorowy, 60cm , 1szt.</p>
-                            <p><b>Data zamówienia: </b>2021-10-05</p>
-                        </div>
-                    </td>
-                    <td style="text-align: center; background-color: #f8f8f8" class="col-xl col-lg">
-                        <div style="float: right; height: 150px" class="col-12">
+                    @endif
+                    @endforeach
 
-                            <p style="font-size: 100%; margin-top: 10%; ">
-                                <strong>20 ZŁ</strong>
-                            </p>
-                            <p>20 ZŁ (sztuka)</p>
-                        </div>
-                    </td>
-                </tr>
             </table>
         </div>
 
@@ -107,25 +98,37 @@
             <div style="width: 100% ; float: left; margin-top: 100px;border-left: 2px solid #f1f1f1">
                 <h1 style="font-size: 200%;margin-bottom: 50px">Oczekujące zamówienie</h1>
                 <table style="margin-top: 50px">
-                    <tr>
-                        <td class="col-xl-10">
-                            <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-12 col-12" src="/storage/pizza/1/pizza_img.jpg">
-                            <div style="margin-left: 20px; float: left">
+                    @foreach($orders as $order)
+                        @if($order->Status == 1)
+                                @foreach(json_decode($order->order, true) as $item)
+                                <tr>
+                                <td class="col-xl-10">
+                                    <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-12 col-12" src="/storage/pizza/{{ $item['id'] }}/pizza_img.jpg">
+                                    <div style="margin-left: 20px; float: left">
 
-                                <h4 class="text-uppercase">Pizza Serowa</h4>
-                                <p>Sos pomidorowy, 60cm , 1szt.</p>
-                            </div>
-                        </td>
-                        <td style="text-align: center; background-color: #f8f8f8" class="col-xl col-lg">
-                            <div style="float: right; height: 150px" class="col-12">
+                                        <h4 class="text-uppercase">{{ $item['pizza_nazwa'] }}</h4>
+                                        <p>{{ $item['rozmiar'] }}, {{ $item['sos'] }}, {{$item['ilosc']}}szt.</p>
+                                        <p><b>Data zamówienia: </b>{{$order->created_at}}</p>
+                                        <form action="/orders/{{$order->id}}" method="POST">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <button type="submit" class="btn btn-group-sm btn-danger delete-user m-0">Anuluj</button>
+                                        </form>
+                                    </div>
+                            </td>
+                            <td style="text-align: center; background-color: #f8f8f8">
+                                <div style="float: right; height: 150px" class="col-12">
 
-                                <p style="font-size: 100%; margin-top: 10%; ">
-                                    <strong>20 ZŁ</strong>
-                                </p>
-                                <p>20 ZŁ (sztuka)</p>
-                            </div>
-                        </td>
-                    </tr>
+                                    <p style="font-size: 100%; margin-top: 15%; ">
+                                        <strong>{{$item['cena_ogl']}} ZŁ</strong>
+                                    </p>
+                                    <p>{{$item['cena_szt']}} ZŁ (sztuka)</p>
+                                </div>
+                                </td>
+                                </tr>
+                            @endforeach
+                        @endif
+                    @endforeach
                 </table>
             </div>
         </div>

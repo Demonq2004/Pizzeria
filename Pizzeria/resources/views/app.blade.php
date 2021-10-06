@@ -44,11 +44,33 @@
                     <li class="my-2 my-lg-0 nav-item">
                         <a class="nav-link" href="/show-cart"><i class="fas fa-shopping-cart"></i> Koszyk</a>
                     </li>
+                    @if(1==1)
+                    <li>
+                        <div class="dropdown">
+                            <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Panel Administratora
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="/admin/pizzas">Pizzy</a>
+                                <a class="dropdown-item" href="/admin/products">Produkty</a>
+                                <a class="dropdown-item" href="/admin/orders">Zamówienia</a>
+                            </div>
+                        </div>
+                    </li>
+                    @endif
                     <li class="my-2 my-lg-0 nav-item">
                         @if(Auth::check())
                         <a class="nav-link" href="/profil"><i class="fas fa-user"></i> {{ Auth::user()->name }} </a>
+
+                    </li>
+                    <li>
+                        <form action="/logout" method="POST">
+                        @csrf <!-- {{ csrf_field() }} -->
+                            {{ method_field('POST') }}
+                            <button type="submit" class="btn btn-link">Wyloguj</button>
+                        </form>
                         @else
-                            <a class="nav-link" href="/profil"><i class="fas fa-user"></i> Zaloguj się </a>
+                            <a class="nav-link" href="/login"><i class="fas fa-user"></i> Zaloguj się </a>
                             @endif
                     </li>
                     <li class="my-2 my-lg-0 nav-item">
@@ -57,11 +79,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <form action="/logout" method="POST">
-                        @csrf <!-- {{ csrf_field() }} -->
-                            {{ method_field('POST') }}
-                            <button type="submit" class="nav-link btn-primary">Wyloguj</button>
-                        </form>
+
                     </li>
                 </ul>
             </div>

@@ -1,22 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\User;
 use App\Pizza;
-use App\Order;
+use App\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class ProfilesController extends Controller
+class AdminProductsController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('role');
+        $this->middleware('role:ROLE_ADMIN');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -24,9 +19,8 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        $user = User::findOrFail(Auth::id());
-        $orders = Order::where('user_id',Auth::id())->get();
-        return view('profil/profil', ['user' => $user, 'orders' => $orders]);
+        $products = Product::all();
+        return view('admin/products/list', ['products' => $products]);
     }
 
     /**
@@ -36,7 +30,11 @@ class ProfilesController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('admin/products/add_product');
+
+
+
     }
 
     /**
@@ -47,7 +45,14 @@ class ProfilesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::create([
+            'nazwa' => $request->nazwa,
+            'cena' => $request->cena,
+            'dostawca' => $request->dostawca,
+            'data_waznosci' => $request->data_waznosci,
+            'dostepny' => true
+        ]);
+        return redirect('/admin/products');
     }
 
     /**
@@ -69,7 +74,13 @@ class ProfilesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('admin/products/add_product', ['product' => $product]);
+
+
+
+
     }
 
     /**
@@ -81,7 +92,13 @@ class ProfilesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->nazwa = $request->nazwa;
+        $product->cena = $request->cena;
+        $product->dostawca = $request->dostawca;
+        $product->data_waznosci = $request->data_waznosci;
+        $product->save();
+        return redirect('admin/products');
     }
 
     /**
@@ -92,6 +109,10 @@ class ProfilesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        $product->delete();
+        return redirect()->back();
     }
+
 }

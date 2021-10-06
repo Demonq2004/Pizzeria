@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Składanie zamówienia - admin list">
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" afterDir="false" />
+    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Profil">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2021_11_24_[Changes]2/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2021_11_24__Changes_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/PizzasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/PizzasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_24_113932_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_24_113932_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/orders/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/orders/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/verify.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +61,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/Produkty" />
+        <entry key="$PROJECT_DIR$" value="feature/Products" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -154,6 +172,7 @@
       <path value="$PROJECT_DIR$/Pizzeria/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/Pizzeria/vendor/fruitcake/laravel-cors" />
       <path value="$PROJECT_DIR$/Pizzeria/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/Pizzeria/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1yZiU0UkAcpTHS4OrF0CtsNAqhr" />
@@ -195,7 +214,8 @@
       <workItem from="1633069972115" duration="11195000" />
       <workItem from="1633175751924" duration="2023000" />
       <workItem from="1633328980498" duration="15374000" />
-      <workItem from="1633414171920" duration="10900000" />
+      <workItem from="1633414171920" duration="12100000" />
+      <workItem from="1633500279769" duration="10841000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -344,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633352082789</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Profil">
+      <created>1633431336685</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1633431336685</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,6 +405,7 @@
     <MESSAGE value="Składanie zamówienia - validation" />
     <MESSAGE value="Składanie zamówienia - dodanie do bazy" />
     <MESSAGE value="Składanie zamówienia - admin list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Składanie zamówienia - admin list" />
+    <MESSAGE value="Profil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Profil" />
   </component>
 </project>

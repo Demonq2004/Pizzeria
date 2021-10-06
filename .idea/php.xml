@@ -103,6 +103,7 @@
       <path value="$PROJECT_DIR$/Pizzeria/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/Pizzeria/vendor/fruitcake/laravel-cors" />
       <path value="$PROJECT_DIR$/Pizzeria/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/Pizzeria/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

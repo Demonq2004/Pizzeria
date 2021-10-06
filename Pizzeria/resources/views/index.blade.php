@@ -77,7 +77,7 @@
                 <h1 class="text-center" style="width: 100%; height: 70px" >Nasi Dostawcy</h1>
 
                     @foreach($products as $product)
-                    <div class="col-xl-5 col-lg-5 col-sm-5 col-12 my-3 px-0 mx-3 text-center" style="background-color: #f8f8f8">
+                    <div class="col-xl-6 col-lg-6 col-sm-6 col-12 my-3 px-0 text-center" style="background-color: #f8f8f8; border: 5px solid white">
                         <div class="px-3">
                             <p style="font-size: 120%" class=" pt-3">Nazwa produktu: <b>{{$product->nazwa}}</b></p>
                             <p>Dostawca: <b>{{$product->dostawca}}</b></p>

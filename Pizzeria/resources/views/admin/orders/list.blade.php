@@ -7,6 +7,7 @@
                 <thead class="table-light">
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">ID użytkownika</th>
                     <th scope="col">Dane zamówienia</th>
                     <th scope="col">Miejsce</th>
                     <th scope="col">Telefon</th>
@@ -18,6 +19,7 @@
                     <th scope="col">Dodatkowy telefon2</th>
                     <th scope="col">Dodatkowy telefon3</th>
                     <th scope="col">Dodatkowy telefon4</th>
+                    <th scope="col">Status</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -25,12 +27,19 @@
                     @foreach($orders as $order)
                         <tr>
                             <th scope="col">{{$order->id}}</th>
+                            <td>@if($order->user_id != null)
+
+                                    {{$order->user_id}}
+                                @else
+                                    Gość
+                                @endif</td>
                             <td>
                                 @foreach(json_decode($order->order, true) as $item)
                                   {{ $item['pizza_nazwa'] }}<br>
                                     <p>roz: {{ $item['rozmiar'] }}, {{ $item['sos'] }}</p>
                                 @endforeach
                             </td>
+
                             <td>{{$order->miejsce}}</td>
                             <td>{{$order->telefon}}</td>
                             <td>{{$order->Miejscowosc}}</td>
@@ -41,8 +50,18 @@
                             <td>{{$order->tel2}}</td>
                             <td>{{$order->tel3}}</td>
                             <td>{{$order->tel4}}</td>
-                            <td>{{$order->tel4}}</td>
-                            <td>{{$order->tel4}}</td>
+                            <td>
+                                @if($order->Status == 1)
+                                    W trakcie
+                                    <form action="/admin/orders/{{$order->id}}" method="POST">
+                                    @csrf <!-- {{ csrf_field() }} -->
+                                        {{ method_field('PATCH') }}
+                                        <button type="submit" class="btn btn-group-sm btn-info delete-user m-0">Ukończono</button>
+                                    </form>
+                                    @elseif($order->Status == 2)
+                                    Dostarczono
+                                @endif
+                            </td>
                             <td>
                                 <form action="/admin/orders/{{$order->id}}" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">

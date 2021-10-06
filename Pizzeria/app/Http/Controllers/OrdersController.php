@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pizza;
 use App\Order;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class OrdersController extends Controller
@@ -16,8 +17,6 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
-        return view('admin/orders/list', ['orders' => $orders]);
     }
 
     /**
@@ -73,7 +72,10 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = Order::find($id);
+        $order->Status = 2;
+        $order->save();
+        return redirect('admin/orders');
     }
 
     /**
@@ -113,9 +115,14 @@ class OrdersController extends Controller
                 if($request->sos == ''){
                     $request->sos = 'brak sosu';
                 }
-
+                if(Auth::check()){
+                $user_id = Auth::user()->id;
+                }else{
+                    $user_id = null;
+                }
                 $cart[$id] = [
                         'id' => $request->pizza_id,
+                        'user_id' => $user_id,
                         'pizza_nazwa' => $pizza->nazwa,
                         'rozmiar' => $request->rozmiar,
                         'sos' => $request->sos,
@@ -162,9 +169,15 @@ class OrdersController extends Controller
                 'kodPocztowy' => 'required'
             ]);
         }
-
+        if(Auth::check()){
+            $user_id = Auth::id();
+        }else{
+            $user_id = null;
+        }
         $items = json_encode(session()->get('cart'));
         $customer = [
+                'user_id'=>$user_id,
+                'order' => $items,
                 'miejsce' => $request->miejsce,
                 'miejscowosc' => $request->miejscowosc,
                 'adres' => $request->adres,
@@ -178,6 +191,7 @@ class OrdersController extends Controller
             ];
 
         Order::create([
+            'user_id'=>$user_id,
             'order' => $items,
             'miejsce' => $request->miejsce,
             'telefon' => $request->telefon,

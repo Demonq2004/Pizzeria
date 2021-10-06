@@ -14,21 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
     Route::resource('profil', ProfilesController::class);
     Route::group(['prefix' => 'admin'], function () {
-        Route::get('/pizzas/dodaj-skladnik/{id}', 'PizzasController@dodajSkladnik');
-        Route::get('/pizzas/usun-skladnik/{id}', 'PizzasController@usunSkladnik');
-        Route::resource('products', ProductsController::class);
-        Route::resource('pizzas', PizzasController::class);
+        Route::get('/pizzas/dodaj-skladnik/{id}', 'AdminPizzasController@dodajSkladnik');
+        Route::get('/pizzas/usun-skladnik/{id}', 'AdminPizzasController@usunSkladnik');
+        Route::resource('products', AdminProductsController::class);
+        Route::resource('pizzas', AdminPizzasController::class);
+        Route::resource('orders', OrdersController::class);
         Route::resource('orders', AdminOrdersController::class);
     });
 
     Route::get('/', 'PizzasController@list');
     Route::get('/pizzas/{id}', 'PizzasController@show');
-    Route::resource('orders', OrdersController::class);
     Route::post('/orders/add-to-cart', 'OrdersController@addToCart');
     Route::get('/show-cart', 'OrdersController@showCart');
     Route::get('/usun-pizza/{id}', 'OrdersController@usunPizza');
     Route::get('/place-order', 'OrdersController@placeOrder');
     Route::post('/orders/order', 'OrdersController@saveOrder');
+    Route::get('/orders/create', 'OrdersController@create');
+    Route::get('/orders/order', 'OrdersController@saveOrder');
 
     Auth::routes();
 

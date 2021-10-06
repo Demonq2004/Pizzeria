@@ -2,10 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfilesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('role');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,9 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        return view('profil/profil');
+        $user = User::findOrFail(Auth::id());
+
+        return view('profil/profil', ['user' => $user]);
     }
 
     /**

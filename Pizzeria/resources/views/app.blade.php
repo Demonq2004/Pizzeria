@@ -45,6 +45,13 @@
                         <a class="nav-link" href="/show-cart"><i class="fas fa-shopping-cart"></i> Koszyk</a>
                     </li>
                     <li class="my-2 my-lg-0 nav-item">
+                        @if(Auth::check())
+                        <a class="nav-link" href="/profil"><i class="fas fa-user"></i> {{ Auth::user()->name }} </a>
+                        @else
+                            <a class="nav-link" href="/profil"><i class="fas fa-user"></i> Zaloguj się </a>
+                            @endif
+                    </li>
+                    <li class="my-2 my-lg-0 nav-item">
                         @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}

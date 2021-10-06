@@ -2,6 +2,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class CheckRole
 {
@@ -12,10 +13,17 @@ class CheckRole
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $role)
+    public function handle($request, Closure $next, $role = false)
     {
-        if (! $request->user()->hasRole($role)) {
-            abort(401, 'This action is unauthorized.');
+        if(!Auth::check() || !Auth::id())
+        {
+            abort(403, 'Brak dostępu');
+        }else
+        {
+            if(! $request->user()->hasRole($role))
+            {
+                abort(403, 'Brak dostępu');
+            }
         }
         return $next($request);
     }

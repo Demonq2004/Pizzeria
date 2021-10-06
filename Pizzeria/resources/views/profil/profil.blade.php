@@ -4,7 +4,7 @@
     <div class="main-page" style="margin-top: 96px" class="row">
         <div style="float: left;" class="p-3 text-center col-xl-6 col-12">
             <h1 style="font-size: 300%">Twój Profil</h1> <!-- Jesli to jest profil innego uzytkownika to wysiwetla: Profil uzytkownika: nazwa -->
-            <p class="text-uppercase" style="font-size: 180%;margin-top: 5%">Jan Kowalski</p>
+            <p class="text-uppercase" style="font-size: 180%;margin-top: 5%">{{ $user->name }}</p>
             <!-- Wyświetla się to wtedy jeśli to jest własne konto -->
             <p>Email: jan@kowalski.com</p>
             <p>Telefon: 645432123</p>

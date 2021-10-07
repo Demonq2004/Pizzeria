@@ -11,7 +11,7 @@
         <article class="content px-5 py-5 p-md-5" style=" min-height: 400px">
             <form action="/orders/order" method="POST">
             @csrf <!-- {{ csrf_field() }} -->
-                @if(Auth::check() && $addresses != '')
+                @if(Auth::check() && !$addresses->isEmpty())
                     <div class="form-check">
                         <input class="form-check-input" value="na_miejscu"  type="radio" name="miejsce" id="miejsce1" onchange="namiejscu()" required>
                         <label class="form-check-label"  for="flexRadioDefault1"> Zamów na miejscu </label>
@@ -40,7 +40,7 @@
                            pattern="[0-9]{9}" value="{{$phone}}"
                            required class="form-control">
                 </div>
-                @if(Auth::check())
+                @if(Auth::check() && !$addresses->isEmpty())
                 <div id="adres" style="display: none" >
                     @else
                         <div id="adres" style="display: block" >
@@ -85,7 +85,7 @@
                             <input type="time" class="form-control" name="godzinadostarczenia" placeholder="Podaj godzine">
                         </div>
                     </div>
-                    @if(Auth::check())
+                    @if(Auth::check() && !$addresses->isEmpty())
                     <input type="submit" value="Zamów" class="btn btn-success" style="margin-top: 20px;display: none" id="wyslij">
                     @else
                     <input type="submit" value="Zamów" class="btn btn-success" style="margin-top: 20px;display: none" id="wyslij">
@@ -93,7 +93,7 @@
 
                 </div>
 
-                @if(Auth::check())
+                @if(Auth::check() && isset($addresses))
                 <div style="display: block;" id="account_adres">
                         <div class="form-check" style="margin-top: 20px; width: 100%;">
                             <input class="form-check-input"  type="checkbox" name="powiadomcheckbox" id="powiadomcheckbox2" onclick="powiadom2()">

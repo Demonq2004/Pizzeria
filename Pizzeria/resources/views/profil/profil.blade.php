@@ -3,9 +3,11 @@
     $punkty = 0;
     @endphp
 @section('content')
-    <div class="main-page" style="margin-top: 96px" class="row p-3">
+    <div class="main-page" style="margin-top: 96px" class="row">
+        <div class="px-1 py-3 p-md-3">
         <div class="alert-success">
             @include('alerts')
+        </div>
         </div>
         <div style="float: left; height: 450px" class="p-3 text-center col-xl-6 col-12">
             <h1 style="font-size: 300%">Twój Profil</h1> <!-- Jesli to jest profil innego uzytkownika to wysiwetla: Profil uzytkownika: nazwa -->
@@ -18,7 +20,7 @@
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <button type="submit" class="btn btn-group-sm btn-danger delete-user m-0">Usuń konto</button>
-                <a href="" class="btn btn-info">Edytuj Profil</a>
+                <a href="/profil/{{$user->id}}/edit" class="btn btn-info">Edytuj Profil</a>
             </form>
 
         </div>

@@ -8,6 +8,7 @@ use App\Order;
 use App\Point;
 use App\Address;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -74,9 +75,9 @@ class ProfilesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('/profil/aktualizuj', ['user' => $user]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -86,7 +87,41 @@ class ProfilesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::where('id',$id)->first();
+        if(Hash::check($request->old_password, $user->password)) {
+            if ($request->name != null) {
+                $request->validate([
+                    'name' => ['string', 'max:255']
+                ]);
+                $user->name = $request->name;
+
+            }
+            if ($request->email != null) {
+                $request->validate([
+                    'email' => ['string', 'email', 'max:255', 'unique:users']
+                ]);
+                $user->email = $request->email;
+
+            }
+            if ($request->phone != null) {
+                $request->validate([
+                    'phone' => ['integer']
+                ]);
+                $user->telefon = $request->phone;
+
+            }
+            if ($request->password != null) {
+                $request->validate([
+                    'password' => ['string', 'min:8', 'confirmed'],
+                ]);
+                $user->password = Hash::make($request->password);
+
+            }
+            $user->save();
+            return redirect('/profil')->with('success', 'Zaktualizowano konto!');
+        }else{
+            return redirect()->back()->with('error', 'Błędne hasło');
+        }
     }
 
     /**

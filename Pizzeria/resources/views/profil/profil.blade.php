@@ -7,7 +7,7 @@
         <div class="alert-success">
             @include('alerts')
         </div>
-        <div style="float: left;" class="p-3 text-center col-xl-6 col-12">
+        <div style="float: left; height: 450px" class="p-3 text-center col-xl-6 col-12">
             <h1 style="font-size: 300%">Twój Profil</h1> <!-- Jesli to jest profil innego uzytkownika to wysiwetla: Profil uzytkownika: nazwa -->
             <p class="text-uppercase" style="font-size: 180%;margin-top: 5%">{{ $user->name }}</p>
             <!-- Wyświetla się to wtedy jeśli to jest własne konto -->
@@ -22,7 +22,7 @@
             </form>
 
         </div>
-        <div style=" float: left;border-left: 2px solid #f1f1f1" class="p-3 text-center col-xl-6 col-12">
+        <div style=" float: left;border-left: 2px solid #f1f1f1;min-height: 450px" class="p-3 text-center col-xl-6 col-12">
             <!-- Wyświetla się to wtedy jeśli to jest własne konto -->
             <h1 style="font-size: 300%">Twoje Adresy</h1>
             <div class="row">
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <div style=" float: left;margin-top: 100px;" class="p-3 text-center col-xl-6 col-12">
+        <div style="float: left;" class="p-3 text-center col-xl-6 col-12">
             <h1 style="font-size: 200%">Twoje Ostatnie Zamówienia</h1>
             <table style="margin-top: 50px">
 
@@ -65,7 +65,7 @@
                         <div style="margin-left: 20px; float: left">
 
                             <h4 class="text-uppercase">{{ $item['pizza_nazwa'] }}</h4>
-                            <p>{{ $item['rozmiar'] }}, {{ $item['sos'] }}, {{$item['ilosc']}}szt.</p>
+                            <p>{{ $item['rozmiar'] }}cm, {{ $item['sos'] }}, {{$item['ilosc']}}szt.</p>
                             <p><b>Data zamówienia: </b>{{$order->created_at}}</p>
                         </div>
                     </td>
@@ -86,8 +86,8 @@
             </table>
         </div>
 
-        <div style="float: right;" class="p-3 text-center col-xl-6 col-12">
-            <div style="width: 100% ; float: left; margin-top: 100px;border-left: 2px solid #f1f1f1" >
+        <div style="float: left;" class="p-3 text-center col-xl-6 col-12">
+            <div style="width: 100% ; float: left;border-left: 2px solid #f1f1f1" >
                 <h1 style="font-size: 200%;margin-bottom: 50px">Twoja Ulubiona Pizza</h1>
                 <img style="margin-top: 20px; float: left" class="col-4" height="200" src="/storage/pizza/1/pizza_img.jpg">
                 <p style="width: 50%; float: left; margin-top: 50px; font-size: 140%" class="text-uppercase"><b>Pizza Serowa</b></p>
@@ -121,7 +121,7 @@
                                     <div style="margin-left: 20px; float: left">
 
                                         <h4 class="text-uppercase">{{ $item['pizza_nazwa'] }}</h4>
-                                        <p>{{ $item['rozmiar'] }}, {{ $item['sos'] }}, {{$item['ilosc']}}szt.</p>
+                                        <p>{{ $item['rozmiar'] }}cm, {{ $item['sos'] }}, {{$item['ilosc']}}szt.</p>
                                     </div>
                             </td>
                             <td style="text-align: center; background-color: #f8f8f8">

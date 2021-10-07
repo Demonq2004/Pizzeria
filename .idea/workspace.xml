@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Profil, panel administratora">
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/adres/add_address.blade.php" afterDir="false" />
+    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Adres">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Address.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminOrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminOrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminPizzasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminPizzasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Point.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Point.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_27_063424_create_points_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_27_063424_create_points_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_27_064026_create_addresses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/migrations/2021_09_27_064026_create_addresses_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/admin/orders/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/orders/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/order.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +199,8 @@
       <workItem from="1633175751924" duration="2023000" />
       <workItem from="1633328980498" duration="15374000" />
       <workItem from="1633414171920" duration="12100000" />
-      <workItem from="1633500279769" duration="22916000" />
+      <workItem from="1633500279769" duration="22949000" />
+      <workItem from="1633587111898" duration="3668000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -375,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633512148988</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Adres">
+      <created>1633524960367</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1633524960367</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,6 +406,7 @@
     <MESSAGE value="Składanie zamówienia - admin list" />
     <MESSAGE value="Profil" />
     <MESSAGE value="Profil, panel administratora" />
-    <option name="LAST_COMMIT_MESSAGE" value="Profil, panel administratora" />
+    <MESSAGE value="Adres" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adres" />
   </component>
 </project>

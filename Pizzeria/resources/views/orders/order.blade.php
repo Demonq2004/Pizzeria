@@ -33,7 +33,7 @@
                                 <option value="sos ostry">Sos ostry</option>
                             </select>
                             <input type="hidden" name="cena" value="{{$pizza->cena}}">
-                            <input type="number" name="ilosc" placeholder="Ilość" required>
+                            <input type="number" name="ilosc" placeholder="Ilość" min="1" required>
                             <input type="submit" value="Dodaj do koszyka" style="font-size: 80%; background-color: #82B300; border: 0; border-radius: 5px; padding: 3px; color: white;">
                         </form>
                     </div>

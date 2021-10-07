@@ -160,7 +160,7 @@ class OrdersController extends Controller
             $addresses = null;
         }
 
-        return view('orders/place_order',['addresses', $addresses]);
+        return view('orders/place_order',['addresses'=> $addresses]);
 
 
     }

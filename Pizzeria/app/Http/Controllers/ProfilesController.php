@@ -29,22 +29,27 @@ class ProfilesController extends Controller
     public function index()
     {
         $user = User::findOrFail(Auth::id());
-        $orders = Order::where('user_id',Auth::id())->orderBy('id','DESC')->get();
-        $points = Point::where('user_id',Auth::id())->get();
-        $addresses = Address::where('user_id',Auth::id())->get();
-        $orders = Order::where('user_id',Auth::id())->get();
-
-        foreach($orders as $key => $order){
-            $pizzas[] =  array_keys(json_decode($order->order,true));
-        }
-        foreach ($pizzas as $pizza)
-        {
-            $ile[]  = $pizza[0];
+        $orders = Order::where('user_id', Auth::id())->orderBy('id', 'DESC')->get();
+        $points = Point::where('user_id', Auth::id())->get();
+        $addresses = Address::where('user_id', Auth::id())->get();
+        $ulubiony = Order::where('user_id', Auth::id())->where('Status',2)->get();
+        if (!$ulubiony->IsEmpty()){
+            foreach ($ulubiony as $key => $order) {
+                    foreach (json_decode($order->order, true) as $item) {
+                        $pizzas[] = $item['pizza_id'];
+                    }
+            }
+        foreach ($pizzas as $pizza) {
+            $ile[] = $pizza[0];
         }
         $ile_2 = array_count_values($ile);
-        dd($ile_2);
+        $ile_3 = array_keys($ile_2, max($ile_2));
+        $ulubiona = Pizza::with('products')->where('id', $ile_3)->first();
+        }else{
+            $ulubiona = null;
+        }
 
-        return view('profil/profil', ['user' => $user, 'orders' => $orders, 'points'=>$points, 'addresses' => $addresses]);
+        return view('profil/profil', ['user' => $user, 'orders' => $orders, 'points'=>$points, 'addresses' => $addresses, 'ulubiona' => $ulubiona]);
     }
 
     /**

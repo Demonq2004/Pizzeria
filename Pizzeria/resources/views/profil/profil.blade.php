@@ -91,14 +91,21 @@
         <div style="float: left;" class="p-3 text-center col-xl-6 col-12">
             <div style="width: 100% ; float: left" >
                 <h1 style="font-size: 200%;margin-bottom: 50px">Twoja Ulubiona Pizza</h1>
-                <img style="margin-top: 20px; float: left" class="col-4" height="200" src="/storage/pizza/1/pizza_img.jpg">
-                <p style="width: 50%; float: left; margin-top: 50px; font-size: 140%" class="text-uppercase"><b>Pizza Serowa</b></p>
+                @if(!$ulubiona == null)
+                <img style="margin-top: 20px; float: left" class="col-4" height="200" src="/storage/pizza/{{$ulubiona->id}}/pizza_img.jpg">
+                <p style="width: 50%; float: left; margin-top: 50px; font-size: 140%" class="text-uppercase"><b>{{$ulubiona->nazwa}}</b></p>
                 <p style="width: 50%; float: left"><b>Składniki pizzy: </b>
-                    Ser
+                    @foreach($ulubiona->products as $product)
+                        {{$product->nazwa}}
+                    @endforeach
+
                     <br>
-                    <b>Cena</b>: 20 zł<br>
+                    <b>Cena</b>: {{$ulubiona->cena}} zł<br>
 
                 </p>
+                @else
+                    <p>Brak ulubionej pizzy, powód: brak zamówień</p>
+                @endif
             </div>
             <div style="width: 100% ;float: left; margin-top: 100px">
                 <h1 style="font-size: 200%;margin-bottom: 50px">Posiadana ilość punktów</h1>

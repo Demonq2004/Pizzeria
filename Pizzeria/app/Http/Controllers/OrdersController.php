@@ -97,15 +97,15 @@ class OrdersController extends Controller
 
             $doid = 2;
             if($request->rozmiar == '30'){
-                $doid = 2;
+                $doid = 0;
             }elseif($request->rozmiar == '45'){
-                $doid = 3;
+                $doid = 1;
             }elseif($request->rozmiar == '50'){
-                $doid = 4;
+                $doid = 2;
             }elseif($request->rozmiar == '60'){
-                $doid = 5;
+                $doid = 3;
             }
-            $id = $request->pizza_id*$doid;
+            $id = $request->pizza_id*4+$doid;
 
             $pizza = Pizza::find($request->pizza_id);
                 if ($request->rozmiar == '45') {

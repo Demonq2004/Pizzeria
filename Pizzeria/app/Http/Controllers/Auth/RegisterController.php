@@ -8,7 +8,6 @@ use App\User;
 use App\Role_User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -79,17 +78,6 @@ class RegisterController extends Controller
             'user_id' => $user->id
         ]);
         return $user;
-//        return $this->gaveRole($data);
     }
-//    protected function gaveRole(array $data)
-//    {
-//        $users = User::where('email',$data['email'])->get();
-//        foreach ($users as $user){
-//            return Role_User::create([
-//                'role_id' => 2,
-//                'user_id' => $user->id
-//            ]);
-//        }
-//
-//    }
+
 }

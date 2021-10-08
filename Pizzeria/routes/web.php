@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
         Route::resource('pizzas', AdminPizzasController::class);
         Route::resource('orders', OrdersController::class);
         Route::resource('orders', AdminOrdersController::class);
+        Route::get('/', 'AdminPizzasController@admin');
     });
 
     Route::get('/', 'PizzasController@list');

@@ -1,8 +1,5 @@
 @extends('app')
-@php
-    $pizzaId = session()->get('pizza');
-    $skladniki = session()->get('skladniki');
-@endphp
+
 @section('content')
 
 

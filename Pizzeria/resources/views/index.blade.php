@@ -31,6 +31,11 @@
             <div class="alert-success">
                 @include('alerts')
             </div>
+            <div class="text-center">
+                @if( Auth::check() && ($rola->role_id == 1))
+                    <p>Jesteś zalogowany jako admin: <a href="/admin">Panel Administratora</a></p>
+                @endif
+            </div>
             <h1 class="text-center" style="width: 100%; height: 70px" >Nasze Menu</h1>
             <div class="row" id="menu" style="width: 80%; margin-left: 10%">
                 @foreach($pizzas as $pizza)

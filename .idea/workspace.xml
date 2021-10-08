@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Dodawanie rol do usera">
-      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/aktualizuj.blade.php" afterDir="false" />
+    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Edytowanie profilu">
+      <change afterPath="$PROJECT_DIR$/Pizzeria/resources/views/admin/panel.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminPizzasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminPizzasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/PizzasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/PizzasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/profil/aktualizuj.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/aktualizuj.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +208,8 @@
       <workItem from="1633328980498" duration="15374000" />
       <workItem from="1633414171920" duration="12100000" />
       <workItem from="1633500279769" duration="22949000" />
-      <workItem from="1633587111898" duration="13176000" />
+      <workItem from="1633587111898" duration="13286000" />
+      <workItem from="1633673872956" duration="6167000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -384,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633593539090</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Edytowanie profilu">
+      <created>1633611219430</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1633611219430</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,6 +439,7 @@
     <MESSAGE value="Adres" />
     <MESSAGE value="Adres - zamówienie" />
     <MESSAGE value="Dodawanie rol do usera" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodawanie rol do usera" />
+    <MESSAGE value="Edytowanie profilu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edytowanie profilu" />
   </component>
 </project>

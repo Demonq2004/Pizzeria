@@ -24,7 +24,7 @@
             </form>
 
         </div>
-        <div style=" float: left;border-left: 2px solid #f1f1f1;min-height: 450px" class="p-3 text-center col-xl-6 col-12">
+        <div style=" float: left;min-height: 450px" class="p-3 text-center col-xl-6 col-12">
             <!-- Wyświetla się to wtedy jeśli to jest własne konto -->
             <h1 style="font-size: 300%">Twoje Adresy</h1>
             <div class="row">
@@ -89,7 +89,7 @@
         </div>
 
         <div style="float: left;" class="p-3 text-center col-xl-6 col-12">
-            <div style="width: 100% ; float: left;border-left: 2px solid #f1f1f1" >
+            <div style="width: 100% ; float: left" >
                 <h1 style="font-size: 200%;margin-bottom: 50px">Twoja Ulubiona Pizza</h1>
                 <img style="margin-top: 20px; float: left" class="col-4" height="200" src="/storage/pizza/1/pizza_img.jpg">
                 <p style="width: 50%; float: left; margin-top: 50px; font-size: 140%" class="text-uppercase"><b>Pizza Serowa</b></p>
@@ -100,7 +100,7 @@
 
                 </p>
             </div>
-            <div style="width: 100% ;float: left; margin-top: 100px;border-left: 2px solid #f1f1f1">
+            <div style="width: 100% ;float: left; margin-top: 100px">
                 <h1 style="font-size: 200%;margin-bottom: 50px">Posiadana ilość punktów</h1>
                 @foreach($points as $point)
                     @php
@@ -111,7 +111,7 @@
                 <p style="font-size: 250%;">{{$punkty}}</p>
 
             </div>
-            <div style="width: 100% ; float: left; margin-top: 100px;border-left: 2px solid #f1f1f1">
+            <div style="width: 100% ; float: left; margin-top: 100px">
                 <h1 style="font-size: 200%;margin-bottom: 50px">Oczekujące zamówienie</h1>
                 <table style="margin-top: 50px">
                     @foreach($orders as $order)

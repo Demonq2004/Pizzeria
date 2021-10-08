@@ -29,9 +29,10 @@ class ProfilesController extends Controller
     public function index()
     {
         $user = User::findOrFail(Auth::id());
-        $orders = Order::where('user_id',Auth::id())->get();
+        $orders = Order::where('user_id',Auth::id())->orderBy('id','DESC')->get();
         $points = Point::where('user_id',Auth::id())->get();
         $addresses = Address::where('user_id',Auth::id())->get();
+        //$ulubiona = Pizza::join('orders')::where('orders.user_id',Auth::id())->orderBy();
         return view('profil/profil', ['user' => $user, 'orders' => $orders, 'points'=>$points, 'addresses' => $addresses]);
     }
 

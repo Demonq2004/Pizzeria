@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pizza;
 use App\Product;
+use App\Role_User;
+use Illuminate\Support\Facades\Auth;
 class PizzasController extends Controller
 {
     public function list(){
@@ -15,7 +17,8 @@ class PizzasController extends Controller
         $skladniki = $pizzas->flatMap->products;
         //$pizza_products = Product::join('Pizza_products','products.id','=','pizza_products.product_id')->where('pizza_products.pizza_id',$pizzas->id)->get();
         $ilosc_pizzy = Pizza::count();
-        return view('index', ['pizzas' => $pizzas,'products' => $products , 'skladniki' => $skladniki, 'ilosc_pizzy', compact('ilosc_pizzy')]);
+        $rola = Role_User::where('user_id', Auth::id())->first();
+        return view('index', ['pizzas' => $pizzas,'products' => $products , 'skladniki' => $skladniki, 'ilosc_pizzy', compact('ilosc_pizzy'), 'rola' => $rola]);
     }
     /**
      * Display a listing of the resource.

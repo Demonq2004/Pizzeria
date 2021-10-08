@@ -12,6 +12,12 @@ class AdminPizzasController extends Controller
         $this->middleware('auth');
         $this->middleware('role:ROLE_ADMIN');
     }
+    //Panel admina
+    public  function admin()
+    {
+
+        return view('admin/panel');
+    }
     /**
      * Display a listing of the resource.
      *

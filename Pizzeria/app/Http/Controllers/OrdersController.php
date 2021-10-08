@@ -216,6 +216,6 @@ class OrdersController extends Controller
         ]);
         session()->forget('cart');
         return redirect('/')->with('success', 'Złożono zamówienie');
-        }
+    }
 //    }
 }

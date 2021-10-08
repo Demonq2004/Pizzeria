@@ -32,14 +32,18 @@ class ProfilesController extends Controller
         $orders = Order::where('user_id',Auth::id())->orderBy('id','DESC')->get();
         $points = Point::where('user_id',Auth::id())->get();
         $addresses = Address::where('user_id',Auth::id())->get();
-        $ulubiona = Order::where('user_id',Auth::id())->get();
+        $orders = Order::where('user_id',Auth::id())->get();
 
-        foreach($ulubiona as $order){
-            $ila[] =  json_decode($order->order,true);
+        foreach($orders as $key => $order){
+            $pizzas[] =  array_keys(json_decode($order->order,true));
         }
-        dd($ila);
-        $ile = array_count_values($ila);
-        max($ile);
+        foreach ($pizzas as $pizza)
+        {
+            $ile[]  = $pizza[0];
+        }
+        $ile_2 = array_count_values($ile);
+        dd($ile_2);
+
         return view('profil/profil', ['user' => $user, 'orders' => $orders, 'points'=>$points, 'addresses' => $addresses]);
     }
 

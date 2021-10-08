@@ -35,11 +35,13 @@ class ProfilesController extends Controller
         $ulubiona = Order::where('user_id',Auth::id())->get();
 
         foreach($ulubiona as $order){
-            $ila[] =  json_decode($order->order,true);
+            if($order->Status==2) {
+                $ila[] = json_decode($order->order, true);
+            }
         }
         dd($ila);
-        $ile = array_count_values($ila);
-        max($ile);
+        //$ile = array_count_values($ila);
+       // max($ile);
         return view('profil/profil', ['user' => $user, 'orders' => $orders, 'points'=>$points, 'addresses' => $addresses]);
     }
 

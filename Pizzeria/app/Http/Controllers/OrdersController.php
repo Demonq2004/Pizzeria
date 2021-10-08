@@ -181,30 +181,30 @@ class OrdersController extends Controller
         }else{
             $user_id = null;
         }
-
-        $customer = [
-                'user_id'=>$user_id,
-                'order' => $items,
-                'miejsce' => $request->miejsce,
-                'miejscowosc' => $request->miejscowosc,
-                'adres' => $request->adres,
-                'kod_pocztowy' => $request->kodPocztowy,
-                'telefon' => $request->telefon,
-                'telefon1' => $request->telefon1,
-                'telefon2' => $request->telefon2,
-                'telefon3' => $request->telefon3,
-                'telefon4' => $request->telefon4,
-                'godzina' => $request->godzinadostarczenia
-            ];
+        $adress = Address::find($request->adress);
+//        $customer = [
+//                'user_id'=>$user_id,
+//                'order' => $items,
+//                'miejsce' => $request->miejsce,
+//                'miejscowosc' => $request->miejscowosc,
+//                'adres' => $request->adres,
+//                'kod_pocztowy' => $request->kodPocztowy,
+//                'telefon' => $request->telefon,
+//                'telefon1' => $request->telefon1,
+//                'telefon2' => $request->telefon2,
+//                'telefon3' => $request->telefon3,
+//                'telefon4' => $request->telefon4,
+//                'godzina' => $request->godzinadostarczenia
+//            ];
 
         Order::create([
             'user_id'=>$user_id,
             'order' => $items,
             'miejsce' => $request->miejsce,
             'telefon' => $request->telefon,
-            'Miejscowosc' => $request->miejscowosc,
-            'Ul_adres' => $request->adres,
-            'kod_pocztowy' => $request->kodPocztowy,
+            'Miejscowosc' => $adress->Miejscowosc,
+            'Ul_adres' => $adress->Ul_adres,
+            'kod_pocztowy' => $adress->kod_pocztowy,
             'Czas_Dostarczenia' => $request->godzinadostarczenia,
             'Cena' => null,
             'Status' => 1,

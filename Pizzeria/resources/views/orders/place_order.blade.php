@@ -108,6 +108,7 @@
                         </div>
                         @foreach($addresses as $address)
                             <div class="col-xl-6 col-sm-12" style=" border: 5px solid white; float: left; margin-top: 50px; margin-bottom: 50px">
+                                <input type="radio" name="adress" value={{$address->id}}> Wybierz adres
                                 <div style="width: 100%; height: 100%; border: 1px solid gray; padding: 20px">
                                     <h4>{{$address->nazwa}}</h4>
                                     <p><b>Miejscowość:</b> {{$address->Miejscowosc}}</p>
@@ -117,11 +118,10 @@
                                     <input type="hidden" name="miejscowosc" value="{{$address->Miejscowosc}}">
                                     <input type="hidden" name="adres" value="{{$address->Ul_adres}}">
                                     <input type="hidden" name="kodPocztowy" value="{{$address->kod_pocztowy}}">
-                                    <button type="submit" class="btn btn-success">Wybierz Adres</button>
                                 </div>
                             </div>
-
                         @endforeach
+                            <button type="submit" class="btn btn-success">Złóż zamówienie</button>
                         @endif
 
                 </div>

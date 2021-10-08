@@ -88,12 +88,12 @@
                                 @if(Auth::check() && !$addresses->isEmpty())
                                     <input type="submit" value="Złóż zamówienie" class="btn btn-success" style="margin-top: 20px;display: none" id="wyslij">
                                 @else
-                                    <input type="submit" value="Złóż zamówienie" class="btn btn-success" style="margin-top: 20px;display: none" id="wyslij">
+                                    <input type="submit" value="Złóż zamówienie" class="btn btn-success" style="margin-top: 20px;display: block" id="wyslij">
                                 @endif
 
                             </div>
 
-                            @if(Auth::check() && isset($addresses))
+                            @if(Auth::check() && !$addresses->isEmpty())
                                 <div style="display: block;" id="account_adres">
                                     <div class="form-check" style="margin-top: 20px; width: 100%;">
                                         <input class="form-check-input"  type="checkbox" name="powiadomcheckbox" id="powiadomcheckbox2" onclick="powiadom2()">

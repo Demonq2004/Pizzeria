@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Koszyk - naprawa bledu z liczeniem">
+    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Profil - poprawka">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminOrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminOrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +200,7 @@
       <workItem from="1633414171920" duration="12100000" />
       <workItem from="1633500279769" duration="22949000" />
       <workItem from="1633587111898" duration="13286000" />
-      <workItem from="1633673872956" duration="14406000" />
+      <workItem from="1633673872956" duration="18659000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -434,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633687398497</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Profil - poprawka">
+      <created>1633690558822</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1633690558822</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +459,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="product-form and product-list" />
     <MESSAGE value="edytowanie, usuwanie produktow" />
     <MESSAGE value="migrate" />
     <MESSAGE value="Pizza/Strona Głowna" />
@@ -478,6 +483,7 @@
     <MESSAGE value="Koszyk - naprawa bledy" />
     <MESSAGE value="Zamawianie - poprawka" />
     <MESSAGE value="Koszyk - naprawa bledu z liczeniem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Koszyk - naprawa bledu z liczeniem" />
+    <MESSAGE value="Profil - poprawka" />
+    <option name="LAST_COMMIT_MESSAGE" value="Profil - poprawka" />
   </component>
 </project>

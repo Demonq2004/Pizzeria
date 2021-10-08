@@ -95,8 +95,19 @@ class OrdersController extends Controller
         if($request->rozmiar != '') {
             $cart = session()->get('cart');
 
-            $id = $request->pizza_id;
-            $pizza = Pizza::find($id);
+            $doid = 2;
+            if($request->rozmiar == '30'){
+                $doid = 2;
+            }elseif($request->rozmiar == '45'){
+                $doid = 3;
+            }elseif($request->rozmiar == '50'){
+                $doid = 4;
+            }elseif($request->rozmiar == '60'){
+                $doid = 5;
+            }
+            $id = $request->pizza_id*$doid;
+
+            $pizza = Pizza::find($request->pizza_id);
                 if ($request->rozmiar == '45') {
                     $cenar = $request->cena * 1.3;
                     $cenaogl = $cenar * $request->ilosc;
@@ -118,16 +129,28 @@ class OrdersController extends Controller
                 }else{
                     $user_id = null;
                 }
+                $ile = $request->ilosc;
+                if($cart != null) {
+                    foreach ($cart as $item) {
+                        if (($pizza->nazwa == $item['pizza_nazwa']) && $request->rozmiar == $item['rozmiar']) {
+                            $ile = $request->ilosc + $item['ilosc'];
+                            $cenaogl = $cenaogl * $ile;
+                        }
+                    }
+                }
+
                 $cart[$id] = [
-                        'id' => $request->pizza_id,
+                        'id' => $id,
+                        'pizza_id' => $request->pizza_id,
                         'user_id' => $user_id,
                         'pizza_nazwa' => $pizza->nazwa,
                         'rozmiar' => $request->rozmiar,
                         'sos' => $request->sos,
-                        'ilosc' => $request->ilosc,
+                        'ilosc' => $ile,
                         'cena_szt' => $cenar,
                         'cena_ogl' => $cenaogl
                 ];
+
                 session()->put('cart', $cart);
 
             return redirect('/')->with('success', $pizza->nazwa . ' dodana do koszyka');

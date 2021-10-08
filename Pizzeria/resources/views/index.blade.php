@@ -43,7 +43,7 @@
                         <img class="col-12" height="200" src="/storage/pizza/{{$pizza->id}}/{{$pizza->img}}">
                         <div class="px-3">
                             <p style="font-size: 120%" class="text-uppercase pt-3"><b><a style="color: black; text-decoration: none" href="/pizzas/{{$pizza->id}}" >{{$pizza->nazwa}}</a></b></p>
-
+                            <p><a href="/pizzas/{{$pizza->id}}" >Więcej informacji</a></p>
                         </div>
                         <div class="col-12 px-0" style="height: 2px; background-color: white"></div>
                         <div class="px-4 pt-3">

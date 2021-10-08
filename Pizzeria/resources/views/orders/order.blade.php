@@ -21,10 +21,10 @@
                             <input type="hidden" name="pizza_id" value="{{$pizza->id}}">
                             <select class="form-select" name="rozmiar">
                                 <option hidden="hidden" selected value="">Wybierz wielkość pizzy</option>
-                                <option value="30">Mała - 30cm</option>
-                                <option value="45">Średnia - 45cm</option>
-                                <option value="50">Duża - 50cm</option>
-                                <option value="60">Gigant - 60cm</option>
+                                <option value="30">Mała - 30cm - Cena: {{$pizza->cena}}ZŁ</option>
+                                <option value="45">Średnia - 45cm - Cena: {{$pizza->cena*1.3}}ZŁ</option>
+                                <option value="50">Duża - 50cm - Cena: {{$pizza->cena*1.5}}ZŁ</option>
+                                <option value="60">Gigant - 60cm - Cena: {{$pizza->cena*1.8}}ZŁ</option>
                             </select>
                             <select class="form-select" name="sos">
                                 <option hidden="hidden" selected value="">Wybierz sos do pizzy</option>

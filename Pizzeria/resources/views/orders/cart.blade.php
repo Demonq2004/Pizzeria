@@ -2,19 +2,35 @@
 @php
     $carts = session()->get('cart');
     $total = 0;
-
+    $ile = 0;
+    $odmiana;
 @endphp
 @section('content')
     <div class="main-page" style="margin-top: 100px">
         <article class="content px-3 py-5 p-md-5" style=" min-height: 400px">
             <h1 class="text-center">Twój koszyk</h1>
+            @if(isset($carts) && $carts != null)
+                @foreach($carts as $cart)
+                    @php
+                        $ile+=$cart['ilosc'];
+                    @endphp
+                @endforeach
+                    @php
+                        if($ile==1){
+                        $odmiana = "pizza";
+                        }else{
+                            $odmiana = "pizzy";
+                        }
+                    @endphp
+                    <p class="text-center">W koszyku znajduje się {{$ile}} {{$odmiana}}</p>
+            @endif
             <div style="width: 60%; margin-left: 20%; margin-top: 50px">
                 <table>
                     @if(isset($carts) && $carts != null)
                         @foreach($carts as $cart)
                             <tr>
                                 <td class="col-xl-10">
-                                    <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-12 col-12" src="/storage/pizza/{{$cart['id']}}/pizza_img.jpg">
+                                    <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-12 col-12" src="/storage/pizza/{{$cart['pizza_id']}}/pizza_img.jpg">
                                     <div style="margin-left: 20px; float: left">
 
                                         <h4 class="text-uppercase">{{$cart['pizza_nazwa']}}</h4>

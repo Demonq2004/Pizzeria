@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Seeder">
+    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Seeder - poprawki">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/order.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +202,7 @@
       <workItem from="1633414171920" duration="12100000" />
       <workItem from="1633500279769" duration="22949000" />
       <workItem from="1633587111898" duration="13286000" />
-      <workItem from="1633673872956" duration="6628000" />
+      <workItem from="1633673872956" duration="10151000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -404,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633680586557</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Seeder - poprawki">
+      <created>1633680968037</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1633680968037</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,6 +455,7 @@
     <MESSAGE value="Dodawanie rol do usera" />
     <MESSAGE value="Edytowanie profilu" />
     <MESSAGE value="Seeder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seeder" />
+    <MESSAGE value="Seeder - poprawki" />
+    <option name="LAST_COMMIT_MESSAGE" value="Seeder - poprawki" />
   </component>
 </project>

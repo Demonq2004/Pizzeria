@@ -63,7 +63,7 @@
                             @foreach(json_decode($order->order, true) as $item)
                             <tr>
                                 <td class="col-xl-10">
-                        <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-3 col-12" src="/storage/pizza/{{ $item['id'] }}/pizza_img.jpg">
+                        <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-3 col-12" src="/storage/pizza/{{ $item['pizza_id'] }}/pizza_img.jpg">
                         <div style="margin-left: 20px; float: left">
 
                             <h4 class="text-uppercase">{{ $item['pizza_nazwa'] }}</h4>
@@ -119,7 +119,7 @@
                                 @foreach(json_decode($order->order, true) as $item)
                                 <tr>
                                 <td class="col-xl-10">
-                                    <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-3 col-12" src="/storage/pizza/{{ $item['id'] }}/pizza_img.jpg">
+                                    <img style="float: left;" class="col-xl-3 col-lg-4 col-sm-3 col-12" src="/storage/pizza/{{ $item['pizza_id'] }}/pizza_img.jpg">
                                     <div style="margin-left: 20px; float: left">
 
                                         <h4 class="text-uppercase">{{ $item['pizza_nazwa'] }}</h4>

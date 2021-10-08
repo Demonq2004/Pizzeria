@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Zamawianie - poprawka">
+    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="Koszyk - naprawa bledu z liczeniem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminOrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/AdminOrdersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/orders/place_order.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/pizzas/single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/pizzas/single.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +201,7 @@
       <workItem from="1633414171920" duration="12100000" />
       <workItem from="1633500279769" duration="22949000" />
       <workItem from="1633587111898" duration="13286000" />
-      <workItem from="1633673872956" duration="13176000" />
+      <workItem from="1633673872956" duration="14406000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -428,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633686582578</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Koszyk - naprawa bledu z liczeniem">
+      <created>1633687398497</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1633687398497</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +453,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
     <MESSAGE value="product-form and product-list" />
     <MESSAGE value="edytowanie, usuwanie produktow" />
     <MESSAGE value="migrate" />
@@ -472,6 +477,7 @@
     <MESSAGE value="Seeder - poprawki" />
     <MESSAGE value="Koszyk - naprawa bledy" />
     <MESSAGE value="Zamawianie - poprawka" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zamawianie - poprawka" />
+    <MESSAGE value="Koszyk - naprawa bledu z liczeniem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Koszyk - naprawa bledu z liczeniem" />
   </component>
 </project>

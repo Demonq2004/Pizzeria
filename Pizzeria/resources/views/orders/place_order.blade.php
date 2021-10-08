@@ -119,9 +119,11 @@
                                             </div>
                                         </div>
                                     @endforeach
-
+                                    <div style="width: 100%; float: left" class="px-3 py-3">
+                                        <button type="submit" class="btn btn-success">Złóż zamówienie</button>
                                     </div>
-                                    <button type="submit" class="btn btn-success">Złóż zamówienie</button>
+                                    </div>
+
                                     @endif
 
 

@@ -93,7 +93,7 @@ class AdminOrdersController extends Controller
 
             Point::create([
                 'user_id' => $request->user_id,
-//                'order_id' => $request->order_id,
+                'order_id' => $request->order_id,
                 'ilosc' => $ilosc
             ]);
         }

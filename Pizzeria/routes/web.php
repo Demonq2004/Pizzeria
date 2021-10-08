@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/orders/create', 'OrdersController@create');
     Route::get('/orders/order', 'OrdersController@saveOrder');
     Route::resource('/profil/adres', AddressesController::class);
+    Route::resource('orders', OrdersController::class);
 
     Auth::routes();
 

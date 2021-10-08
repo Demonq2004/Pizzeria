@@ -134,7 +134,7 @@ class OrdersController extends Controller
                     foreach ($cart as $item) {
                         if (($pizza->nazwa == $item['pizza_nazwa']) && $request->rozmiar == $item['rozmiar']) {
                             $ile = $request->ilosc + $item['ilosc'];
-                            $cenaogl = $cenaogl * $ile;
+                            $cenaogl = $cenar * $ile;
                         }
                     }
                 }

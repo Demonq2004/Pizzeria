@@ -30,7 +30,6 @@
         </article>
 
         <div style="width: 80%; margin-left: 10%; min-height: 400px">
-            <h1 class="text-center">Opinie</h1>
 
             <a href="/" class="btn btn-primary">Wróć</a>
         </div>

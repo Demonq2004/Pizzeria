@@ -119,10 +119,12 @@
                                             </div>
                                         </div>
                                     @endforeach
+
+                                    </div>
                                     <button type="submit" class="btn btn-success">Złóż zamówienie</button>
                                     @endif
 
-                                </div>
+
 
             </form>
             <script>

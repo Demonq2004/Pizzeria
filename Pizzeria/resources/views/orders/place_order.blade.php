@@ -17,7 +17,7 @@
                         <label class="form-check-label"  for="flexRadioDefault1"> Zamów na miejscu </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" value="na_adres" type="radio" name="miejsce" id="miejsce3" onchange="pokazAdresUser()" required checked>
+                        <input class="form-check-input" value="na_user_adres" type="radio" name="miejsce" id="miejsce3" onchange="pokazAdresUser()" required checked>
                         <label class="form-check-label" for="flexRadioDefault2">Wybierz swój adres</label>
                     </div>
                     <div class="form-check">
@@ -115,9 +115,6 @@
                                                 <p><b>Adres:</b> {{$address->Ul_adres}}</p>
                                                 <p><b>Kod Pocztowy:</b> {{$address->kod_pocztowy}}</p>
 
-                                                <input type="hidden" name="miejscowosc" value="{{$address->Miejscowosc}}">
-                                                <input type="hidden" name="adres" value="{{$address->Ul_adres}}">
-                                                <input type="hidden" name="kodPocztowy" value="{{$address->kod_pocztowy}}">
                                                 <input type="radio" name="adress" value={{$address->id}}> Wybierz adres
                                             </div>
                                         </div>

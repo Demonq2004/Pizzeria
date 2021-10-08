@@ -199,12 +199,25 @@ class OrdersController extends Controller
                 'kodPocztowy' => 'required'
             ]);
         }
+        $adress = Address::find($request->adress);
         if(Auth::check()){
             $user_id = Auth::id();
+            if($request->miejsce == "na_user_adres") {
+                $miejscowosc = $adress->Miejscowosc;
+                $adres = $adress->Ul_adres;
+                $kodPocztowy = $adress->kod_pocztowy;
+            }elseif($request->miejsce == "na_adres"){
+                $miejscowosc = $request->miejscowosc;
+                $adres = $request->adres;
+                $kodPocztowy = $request->kodPocztowy;
+            }
         }else{
             $user_id = null;
+            $miejscowosc = $request->miejscowosc;
+            $adres = $request->adres;
+            $kodPocztowy = $request->kodPocztowy;
         }
-        $adress = Address::find($request->adress);
+
 //        $customer = [
 //                'user_id'=>$user_id,
 //                'order' => $items,
@@ -225,9 +238,9 @@ class OrdersController extends Controller
             'order' => $items,
             'miejsce' => $request->miejsce,
             'telefon' => $request->telefon,
-            'Miejscowosc' => $adress->Miejscowosc,
-            'Ul_adres' => $adress->Ul_adres,
-            'kod_pocztowy' => $adress->kod_pocztowy,
+            'Miejscowosc' => $miejscowosc,
+            'Ul_adres' => $adres,
+            'kod_pocztowy' => $kodPocztowy,
             'Czas_Dostarczenia' => $request->godzinadostarczenia,
             'Cena' => null,
             'Status' => 1,

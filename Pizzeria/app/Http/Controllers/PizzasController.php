@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Pizza;
 use App\Product;
 use App\Role_User;
+use App\Opinion;
 use Illuminate\Support\Facades\Auth;
 class PizzasController extends Controller
 {
@@ -52,7 +53,9 @@ class PizzasController extends Controller
     public function show($id)
     {
         $pizza = Pizza::with('products')->where('id',$id)->get();
-        return view('pizzas/single', ['pizza' => $pizza[0]]);
+        $opinions = Opinion::where('pizza_id',$id)->get();
+        $rola = Role_User::where('user_id', Auth::id())->first();
+        return view('pizzas/single', ['pizza' => $pizza[0], 'opinions' => $opinions, 'rola' => $rola]);
     }
 
     /**

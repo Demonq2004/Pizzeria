@@ -7,6 +7,7 @@ use App\Pizza;
 use App\Order;
 use App\Point;
 use App\Address;
+use App\Opinion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -150,6 +151,10 @@ class ProfilesController extends Controller
     public function destroy($id)
     {
         $profile = User::find($id);
+        $opinions = Opinion::where('user_id',$id)->get();
+        foreach($opinions as $opinion){
+                    $opinion->delete();
+                }
         $profile->delete();
         return redirect('/')->with('success', 'Poprawnie usunięto konto');;
     }

@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="ulubiona - v1">
+    <list default="true" id="53cc7c0f-b920-4a88-934d-53ab4ce6e2c1" name="Changes" comment="ulubiona pizza - skonczona">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/app/Http/Controllers/ProfilesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria/resources/views/profil/profil.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +206,9 @@
       <workItem from="1633414171920" duration="12100000" />
       <workItem from="1633500279769" duration="22949000" />
       <workItem from="1633587111898" duration="13286000" />
-      <workItem from="1633673872956" duration="26522000" />
+      <workItem from="1633673872956" duration="26763000" />
+      <workItem from="1633895496589" duration="581000" />
+      <workItem from="1634218492377" duration="1334000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1632467934614</created>
@@ -463,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633694869739</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="ulubiona pizza - skonczona">
+      <created>1633703043946</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1633703043946</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +488,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="migrate" />
     <MESSAGE value="Pizza/Strona Głowna" />
     <MESSAGE value="Strona głowna" />
     <MESSAGE value="Karta" />
@@ -507,6 +512,7 @@
     <MESSAGE value="Koszyk - naprawa bledu z liczeniem" />
     <MESSAGE value="Profil - poprawka" />
     <MESSAGE value="ulubiona - v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="ulubiona - v1" />
+    <MESSAGE value="ulubiona pizza - skonczona" />
+    <option name="LAST_COMMIT_MESSAGE" value="ulubiona pizza - skonczona" />
   </component>
 </project>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Pizza;
 use App\Product;
+use App\Opinion;
 use Illuminate\Http\Request;
 
 class AdminPizzasController extends Controller
@@ -142,7 +143,11 @@ class AdminPizzasController extends Controller
     public function destroy($id)
     {
         $pizza = Pizza::find($id);
+        $opinions = Opinion::where('pizza_id',$id)->get();
 
+        foreach($opinions as $opinion){
+            $opinion->delete();
+        }
         $pizza->delete();
         return redirect()->back();
     }

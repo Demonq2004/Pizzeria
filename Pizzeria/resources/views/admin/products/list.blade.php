@@ -25,7 +25,7 @@
                         <td>{{ $product->dostawca }}</td>
                         <td>{{ $product->data_waznosci }}</td>
                         <td>
-                            <form action="/products/{{$product->id}}" method="POST">
+                            <form action="/admin/products/{{$product->id}}" method="POST">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-group-sm btn-danger delete-user m-0"><i class="fas fa-trash-alt"></i></button>

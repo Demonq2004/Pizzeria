@@ -60,7 +60,7 @@ class ProfilesController extends Controller
      */
     public function create()
     {
-        //
+        ///
     }
 
     /**

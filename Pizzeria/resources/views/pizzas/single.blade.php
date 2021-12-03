@@ -30,6 +30,7 @@
         </article>
 
         <div style="width: 80%; margin-left: 10%; min-height: 400px">
+            <!-- Opinie -->
         <h2 style="text-align:center;">Napisz opinie:</h2>
         <div>
         @if(Auth::check())

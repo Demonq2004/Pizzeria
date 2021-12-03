@@ -13,7 +13,7 @@ class AdminPizzasController extends Controller
         $this->middleware('auth');
         $this->middleware('role:ROLE_ADMIN');
     }
-    //Panel admina
+    //Panel adminaa
     public  function admin()
     {
 

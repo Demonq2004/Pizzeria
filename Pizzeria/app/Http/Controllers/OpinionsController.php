@@ -38,6 +38,7 @@ class OpinionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //tworzenie opini
     public function store(Request $request)
     {
         Opinion::create([
